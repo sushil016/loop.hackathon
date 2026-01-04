@@ -17,7 +17,7 @@ export default function RegistrationBanner() {
         <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
       </span>
       
-      <span className="text-white font-semibold text-sm sm:text-base tracking-wide">
+      <span className="text-white font-semibold text-xs sm:text-base tracking-wide">
         Registrations are LIVE on Unstop!
       </span>
       

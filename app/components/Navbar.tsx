@@ -49,13 +49,13 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed top-12 left-0 right-0 z-50 flex justify-center px-4">
+    <div className="fixed top-12 left-0 right-0 z-50 px-4 md:flex md:justify-center">
       <nav
-        className={`transition-all duration-300 rounded-full border border-white/10 bg-black/80 backdrop-blur-md ${
-          scrolled ? "w-[70%] py-2" : "w-[80%] py-3"
+        className={`transition-all duration-300 md:rounded-full rounded-2xl border border-white/10 bg-black/80 backdrop-blur-md w-full py-3 ${
+          scrolled ? "md:w-[70%] md:py-2" : "md:w-[80%]"
         }`}
       >
-        <div className="px-6 lg:px-8">
+        <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
@@ -65,9 +65,9 @@ export default function Navbar() {
             <Image
               src="/loop-logo.png"
               alt="Loop Logo"
-              width={64}
-              height={64}
-              className="rounded-lg"
+              width={48}
+              height={48}
+              className="rounded-lg md:w-16 md:h-16"
             />
             
           </Link>
@@ -128,7 +128,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 glass-strong rounded-2xl p-4 animate-fade-in-up">
+          <div className="md:hidden mt-4 p-4 border-t border-white/10">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <button
