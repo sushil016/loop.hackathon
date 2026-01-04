@@ -9,23 +9,24 @@ const UNSTOP_LINK = "https://unstop.com/p/loop-10-24-hr-national-level-hackathon
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Full-size Logo Background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0">
         <Image
-          src="/loop-logo.png"
+          src="/loop-hero2-background.png"
           alt=""
-          width={800}
-          height={800}
-          className="opacity-[0.03] w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] object-contain"
+          fill
+          className="object-cover"
           priority
         />
-      </div>
-
-      {/* Subtle Background Gradient */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-black to-black" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/8 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px]" />
+        {/* Dark overlay for text visibility */}
+        <div className="absolute inset-0 bg-black/10 opacity-20" />
+        <Image
+          src="/loop-hero3-background.png"
+          alt=""
+          fill
+          className="object-cover opacity-100"
+          priority
+        />
       </div>
 
       {/* Subtle Grid Pattern */}
@@ -38,10 +39,17 @@ export default function Hero() {
           <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
         </div>
 
-        {/* LOOP Text */}
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-6 animate-fade-in-up delay-100 tracking-tight">
-          LOOP
-        </h1>
+        {/* LOOP Text Image */}
+        <div className="mb-6 animate-fade-in-up delay-100">
+          <Image
+            src="/loop-text.png"
+            alt="LOOP"
+            width={600}
+            height={200}
+            className="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto mx-auto"
+            priority
+          />
+        </div>
 
         {/* Tagline */}
         <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight tracking-tight text-white mb-4 animate-fade-in-up delay-200">

@@ -63,7 +63,7 @@ export default function Navbar() {
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/loop-logo.png"
+              src="/loop-logo2.png"
               alt="Loop Logo"
               width={48}
               height={48}
@@ -89,7 +89,7 @@ export default function Navbar() {
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
             {/* Dark Mode Toggle */}
-            <button
+            {/* <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-full glass hover:bg-white/10 transition-colors"
               aria-label="Toggle dark mode"
@@ -99,7 +99,7 @@ export default function Navbar() {
               ) : (
                 <Moon className="w-5 h-5 text-blue-500" />
               )}
-            </button>
+            </button> */}
 
             {/* Register Button (Desktop) */}
             <a
