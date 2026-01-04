@@ -128,7 +128,7 @@ export default function Rules() {
         </div>
 
         {/* Confidentiality Notice */}
-        <div className="glass-strong p-6 rounded-2xl border border-yellow-500/30 mb-16">
+        {/* <div className="glass-strong p-6 rounded-2xl border border-yellow-500/30 mb-16">
           <div className="flex items-start gap-4">
             <AlertCircle className="w-8 h-8 text-yellow-400 flex-shrink-0" />
             <div>
@@ -140,12 +140,11 @@ export default function Rules() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        {/* Do's and Don'ts */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Do's */}
-          <div className="glass p-6 rounded-2xl border border-green-500/30">
+   
+          
+          {/* <div className="glass p-6 rounded-2xl border border-green-500/30">
             <div className="flex items-center gap-3 mb-6">
               <CheckCircle className="w-8 h-8 text-green-400" />
               <h3 className="text-xl font-bold text-green-400">Do's</h3>
@@ -158,10 +157,10 @@ export default function Rules() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Don'ts */}
-          <div className="glass p-6 rounded-2xl border border-red-500/30">
+          {/* <div className="glass p-6 rounded-2xl border border-red-500/30">
             <div className="flex items-center gap-3 mb-6">
               <XCircle className="w-8 h-8 text-red-400" />
               <h3 className="text-xl font-bold text-red-400">Don'ts</h3>
@@ -174,11 +173,11 @@ export default function Rules() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
+          </div> */}
+        
 
         {/* Code of Conduct */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <div className="glass p-8 rounded-3xl max-w-2xl mx-auto">
             <Shield className="w-12 h-12 text-blue-400 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-4">Code of Conduct</h3>
@@ -191,7 +190,7 @@ export default function Rules() {
               Any form of misconduct or violation may lead to disqualification.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

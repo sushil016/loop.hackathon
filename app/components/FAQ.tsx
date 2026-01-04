@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+// Icons removed
 
 const faqs = [
   {
     question: "Who can participate in Loop Hackathon?",
-    answer: "Any undergraduate student pursuing a Bachelor's degree in any field can participate. Teams must consist of 4-6 members, and inter-college team formation is allowed.",
+    answer: "Any undergraduate student pursuing a Bachelor's degree in any field can participate. Teams must consist of 3-6 members, and inter-college team formation is allowed.",
   },
   {
     question: "How do I register my team?",
@@ -50,86 +50,99 @@ const faqs = [
   },
   {
     question: "How do I contact the organizers?",
-    answer: "You can reach us at loop.hackathon26@gmail.com for any queries. Official updates will be shared via registered email IDs and the Unstop platform.",
+    answer: "You can reach us at loop.hackathon@bvcoenm.edu.in for any queries. Official updates will be shared via registered email IDs and the Unstop platform.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="relative py-24 bg-black/30">
+    <section id="faq" className="relative py-32 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Frequently Asked <span className="gradient-text">Questions</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Got questions? We've got answers
+        <div className="text-center mb-20">
+          <p className="text-white/40 text-sm uppercase tracking-[0.3em] mb-4">
+            Support
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mt-4" />
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Questions & Answers
+          </h2>
+          <p className="text-white/50 text-lg max-w-xl mx-auto">
+            Everything you need to know about participating in Loop
+          </p>
         </div>
 
         {/* FAQ List */}
-        <div className="space-y-4">
+        <div className="space-y-0 border-t border-white/[0.08]">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`glass rounded-2xl overflow-hidden transition-all duration-300 ${
-                openIndex === index ? "border border-blue-500/30" : ""
-              }`}
+              className="border-b border-white/[0.08]"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                className="w-full py-6 flex items-start justify-between text-left group"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                    <HelpCircle className="w-4 h-4 text-blue-400" />
-                  </div>
-                  <span className="font-medium pr-4">{faq.question}</span>
+                <div className="flex items-start gap-6">
+                  <span className="text-white/20 text-sm font-mono mt-1">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className={`text-lg font-medium transition-colors duration-300 ${
+                    openIndex === index ? 'text-white' : 'text-white/70 group-hover:text-white'
+                  }`}>
+                    {faq.question}
+                  </span>
                 </div>
-                <ChevronDown
-                  className={`w-5 h-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                />
+                <span className={`text-2xl text-white/30 transition-transform duration-300 ml-4 ${
+                  openIndex === index ? 'rotate-45' : ''
+                }`}>
+                  +
+                </span>
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-96" : "max-h-0"
+                className={`overflow-hidden transition-all duration-500 ease-out ${
+                  openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="px-6 pb-6 pl-18">
-                  <div className="ml-12 text-gray-400 leading-relaxed">
+                <div className="pb-6 pl-12">
+                  <p className="text-white/50 leading-relaxed max-w-2xl">
                     {faq.answer}
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Still have questions */}
-        <div className="mt-16 text-center">
-          <div className="glass p-8 rounded-3xl">
-            <HelpCircle className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
-            <p className="text-gray-400 mb-6">
-              Can't find what you're looking for? Reach out to us directly!
+        {/* Contact Section */}
+        <div className="mt-20 text-center">
+          <div className="inline-block">
+            <p className="text-white/40 text-sm mb-6">
+              Still have questions? We're here to help.
             </p>
-            <a
-              href="mailto:loop.hackathon26@gmail.com"
-              className="inline-flex items-center gap-2 btn-primary px-6 py-3 rounded-full text-white font-medium"
-            >
-              Contact Us
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a
+                href="mailto:loop.hackathon@bvcoenm.edu.in"
+                className="text-white hover:text-white/70 transition-colors"
+              >
+                loop.hackathon@bvcoenm.edu.in
+              </a>
+              <span className="hidden sm:block text-white/20">·</span>
+              <a
+                href="https://instagram.com/loop.hackathon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-white/70 transition-colors"
+              >
+                @loop.hackathon
+              </a>
+            </div>
           </div>
         </div>
       </div>
