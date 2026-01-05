@@ -1,105 +1,141 @@
 "use client";
 
-const benefits = [
-  {
-    id: 1,
-    title: "Brand Visibility",
-    description: "Your logo featured on all event materials, website, and participant communications.",
-  },
-  {
-    id: 2,
-    title: "Talent Access",
-    description: "Connect directly with 100+ skilled developers, engineers, and innovators.",
-  },
-  {
-    id: 3,
-    title: "Judging Opportunity",
-    description: "Participate as judges and interact with participating teams.",
-  },
-  {
-    id: 4,
-    title: "Recruitment Pipeline",
-    description: "Identify and recruit top talent from participating students.",
-  },
-  {
-    id: 5,
-    title: "Product Showcase",
-    description: "Present your APIs, tools, or products to tech-savvy participants.",
-  },
-  {
-    id: 6,
-    title: "Community Goodwill",
-    description: "Support student innovation and build lasting relationships with the tech community.",
-  },
-];
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { Highlight } from "@/components/ui/hero-highlight";
+import { Cover } from "@/components/ui/cover";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export default function Sponsors() {
   return (
-    <section id="sponsors" className="relative py-24 bg-black">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="sponsors" className="relative py-28 bg-black">
+      {/* Subtle background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
-            Partner with Us
+        <div className="mb-20">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Partner with{" "}
+            <PointerHighlight
+              rectangleClassName="border-2 border-yellow-500"
+              pointerClassName="text-yellow-500"
+            >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">
+                Loop
+              </span>
+            </PointerHighlight>
           </h2>
-          <p className="text-white/50 max-w-2xl">
-            Join us as a sponsor and connect with the next generation of tech innovators
+          <p className="text-xl text-white/70 max-w-3xl">
+            Connect with the next generation of tech innovators and showcase your brand
           </p>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.id}
-              className="border border-white/10 p-6 rounded-lg hover:border-white/20 transition-colors"
-            >
-              <span className="text-white/30 font-mono text-sm">
-                {String(benefit.id).padStart(2, '0')}
-              </span>
-              <h3 className="text-lg font-semibold text-white mt-3 mb-2">
-                {benefit.title}
-              </h3>
-              <p className="text-white/50 text-sm leading-relaxed">
-                {benefit.description}
-              </p>
+        {/* Main Content */}
+        <div className="space-y-16">
+          {/* Why Sponsor */}
+          <div>
+            <div className="text-xl text-white/90 leading-relaxed mb-12">
+              <span>Join </span>
+              <Highlight className="text-white font-bold">
+                Loop 1.0
+              </Highlight>
+              <span> as a sponsor and gain direct access to </span>
+              <Cover className="text-white font-bold">
+                400+ talented developers and innovators
+              </Cover>
+              <span> from across India. Get </span>
+              <Highlight className="text-white font-bold">
+                24-hour brand exposure
+              </Highlight>
+              <span> during this </span>
+              <Cover className="text-white font-bold">
+                National Level Hackathon
+              </Cover>
+              <span>.</span>
             </div>
-          ))}
-        </div>
 
-        {/* Stats */}
-        <div className="border border-white/10 rounded-lg p-8 mb-16">
-          <div className="grid sm:grid-cols-3 gap-8 text-center">
-            <div>
-              <p className="text-3xl font-bold text-white">400+</p>
-              <p className="text-white/40 text-sm mt-1">Participants</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">24 hrs</p>
-              <p className="text-white/40 text-sm mt-1">Brand Exposure</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">National</p>
-              <p className="text-white/40 text-sm mt-1">Reach</p>
+            {/* Stats */}
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <AnimatedGradientText
+                  className="text-5xl font-bold mb-3"
+                  colorFrom="#0048ffff"
+                  colorTo="#f91616ff"
+                  speed={1.5}
+                >
+                  400+
+                </AnimatedGradientText>
+                <p className="text-white/60 text-lg">Participants Expected</p>
+              </div>
+              <div className="text-center">
+                <AnimatedGradientText
+                  className="text-5xl font-bold mb-3"
+                  colorFrom="#0d00ffff"
+                  colorTo="#fb0000ff"
+                  speed={1.5}
+                >
+                  24hrs
+                </AnimatedGradientText>
+                <p className="text-white/60 text-lg">Brand Visibility</p>
+              </div>
+              <div className="text-center">
+                <AnimatedGradientText
+                  className="text-5xl font-bold mb-3"
+                  colorFrom="#0015ffff"
+                  colorTo="#ff0000ff"
+                  speed={1.5}
+                >
+                  National
+                </AnimatedGradientText>
+                <p className="text-white/60 text-lg">Level Reach</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* CTA */}
-        <div className="border border-white/10 p-8 rounded-lg text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Interested in Sponsoring?
-          </h3>
-          <p className="text-white/50 mb-6 max-w-lg mx-auto">
-            Partner with Loop and showcase your brand to 100+ talented developers, 
-            engineers, and innovators. Multiple sponsorship tiers available.
-          </p>
-          <a
-            href="mailto:loop.hackathon26@gmail.com?subject=Sponsorship%20Inquiry%20-%20Loop%20Hackathon"
-            className="inline-flex items-center justify-center bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors"
-          >
-            Contact for Sponsorship
-          </a>
+          {/* Key Benefits */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full" />
+              Key Benefits
+            </h3>
+            <div className="pl-8 space-y-6">
+              <div className="text-xl text-white/90 leading-relaxed">
+                <Highlight className="text-white font-bold">Brand visibility</Highlight>
+                <span> on all event materials, website, and communications. </span>
+                <Cover className="text-white font-bold">Direct talent access</Cover>
+                <span> to recruit skilled developers. Opportunity to </span>
+                <Highlight className="text-white font-bold">judge projects</Highlight>
+                <span> and </span>
+                <Cover className="text-white font-bold">showcase your products</Cover>
+                <span> to tech-savvy participants.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-16">
+            <div className="relative rounded-2xl bg-gradient-to-r from-white/[0.03] to-white/[0.01] p-8 md:p-12 overflow-hidden text-center">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl" />
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  Interested in Sponsoring?
+                </h3>
+                <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                  Multiple sponsorship tiers available. Contact us to discuss partnership opportunities
+                  and customize your sponsorship package
+                </p>
+                <a href="mailto:loop.hackathon26@gmail.com?subject=Sponsorship%20Inquiry%20-%20Loop%20Hackathon">
+                  <RainbowButton className="text-lg px-8 py-4">
+                    Contact for Sponsorship
+                  </RainbowButton>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

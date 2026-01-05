@@ -1,4 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { Cover } from "@/components/ui/cover";
+import { Highlight } from "@/components/ui/hero-highlight";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 const UNSTOP_LINK = "https://unstop.com/p/loop-10-24-hr-national-level-hackathon-bharati-vidyapeeth-college-of-engineering-bvcoe-navi-mumbai-1617554";
 
@@ -88,57 +96,91 @@ const softwareProblems = [
 export default function ProblemStatements() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <header className="border-b border-white/10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
+
+      {/* Header */}
+      <header className="relative border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-white font-bold text-xl">
+            <Link href="/" className="text-white font-bold text-2xl">
               LOOP
             </Link>
             <Link
               href="/"
-              className="text-white/60 hover:text-white transition-colors text-sm"
+              className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-medium"
             >
+              <ArrowLeft className="w-4 h-4" />
               Back to Home
             </Link>
           </div>
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Problem Statements
+      <main className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Page Header */}
+        <div className="mb-20 text-center">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <PointerHighlight
+              rectangleClassName="border-2 border-blue-500"
+              pointerClassName="text-blue-500"
+            >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                Problem Statements
+              </span>
+            </PointerHighlight>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl">
-            Review the tracks and problem statements below. Detailed specifications will be provided during the hackathon.
+          <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            Review the <Highlight className="text-white font-semibold">tracks</Highlight> and{" "}
+            <Highlight className="text-white font-semibold">problem statements</Highlight> below.{" "}
+            <Cover>Detailed specifications</Cover> will be provided during the hackathon.
           </p>
         </div>
 
-        <section className="mb-20">
-          <h2 className="text-2xl font-bold text-white mb-2">Problem Tracks</h2>
-          <p className="text-white/40 text-sm mb-8">Six core themes guiding all problem statements</p>
+        {/* Problem Tracks Section */}
+        <section className="mb-24">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Problem <Cover>Tracks</Cover>
+            </h2>
+            <AnimatedGradientText
+              className="text-lg"
+              colorFrom="#60a5fa"
+              colorTo="#a855f7"
+              speed={1.5}
+            >
+              Six core themes guiding all problem statements
+            </AnimatedGradientText>
+          </div>
           
-          <div className="border border-white/10 rounded-lg overflow-hidden">
+          <div className="space-y-6">
             {problemTracks.map((track, index) => (
               <div
                 key={track.id}
-                className={`p-6 ${index !== problemTracks.length - 1 ? 'border-b border-white/10' : ''}`}
+                className="group relative bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 hover:border-white/20 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
               >
-                <div className="flex gap-4">
-                  <span className="text-white/30 font-mono text-sm w-8 flex-shrink-0">
-                    {String(track.id).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-white/10">
+                      <span className="text-2xl font-bold text-white">
+                        {String(track.id).padStart(2, '0')}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all">
                       {track.title}
                     </h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-white/70 text-lg leading-relaxed">
                       {track.description}
                     </p>
                     {track.constraint && (
-                      <div className="mt-3">
-                        <p className="text-white/30 text-xs uppercase tracking-wider mb-1">Constraint</p>
-                        <p className="text-white/50 text-sm leading-relaxed">
+                      <div className="mt-4 p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                        <p className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-2">⚡ Constraint</p>
+                        <p className="text-white/60 text-base leading-relaxed">
                           {track.constraint}
                         </p>
                       </div>
@@ -150,62 +192,41 @@ export default function ProblemStatements() {
           </div>
         </section>
 
-        {/* <section className="mb-20">
-          <h2 className="text-2xl font-bold text-white mb-2">Hardware Problem Statements</h2>
-          <p className="text-white/40 text-sm mb-8">Physical systems and embedded solutions</p>
-          
-          <div className="space-y-6">
-            {hardwareProblems.map((problem) => (
-              <div
-                key={problem.id}
-                className="border border-white/10 rounded-lg p-6"
-              >
-                <div className="flex gap-4">
-                  <span className="text-white/30 font-mono text-sm w-8 flex-shrink-0">
-                    H{problem.id}
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-3">
-                      {problem.title}
-                    </h3>
-                    <p className="text-white/50 text-sm leading-relaxed mb-4">
-                      {problem.description}
-                    </p>
-                    
-                    {problem.focusAreas.length > 0 && (
-                      <div>
-                        <p className="text-white/30 text-xs uppercase tracking-wider mb-2">Focus Areas</p>
-                        <p className="text-white/60 text-sm">
-                          {problem.focusAreas.join(' / ')}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
+        {/* Software Problems Section */}
+        <section className="mb-24">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Software <Cover>Problem Statements</Cover>
+            </h2>
+            <AnimatedGradientText
+              className="text-lg"
+              colorFrom="#f97316"
+              colorTo="#ea580c"
+              speed={1.5}
+            >
+              AI, analytics, and intelligent systems
+            </AnimatedGradientText>
           </div>
-        </section> */}
-
-        <section className="mb-20">
-          <h2 className="text-2xl font-bold text-white mb-2">Software Problem Statements</h2>
-          <p className="text-white/40 text-sm mb-8">AI, analytics, and intelligent systems</p>
           
           <div className="space-y-6">
             {softwareProblems.map((problem) => (
               <div
                 key={problem.id}
-                className="border border-white/10 rounded-lg p-6"
+                className="group relative bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 hover:border-orange-500/30 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10"
               >
-                <div className="flex gap-4">
-                  <span className="text-white/30 font-mono text-sm w-8 flex-shrink-0">
-                    S{problem.id}
-                  </span>
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border border-white/10">
+                      <span className="text-xl font-bold text-white">
+                        S{problem.id}
+                      </span>
+                    </div>
+                  </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-3">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-red-400 transition-all">
                       {problem.title}
                     </h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-white/70 text-lg leading-relaxed">
                       {problem.description}
                     </p>
                   </div>
@@ -215,56 +236,79 @@ export default function ProblemStatements() {
           </div>
         </section>
 
-        <section className="mb-20">
-          <div className="border border-white/10 rounded-lg p-6 text-center">
-            <p className="text-white/40 text-sm">More Problems Coming Soon!</p>
+        {/* Coming Soon */}
+        <section className="mb-24">
+          <div className="border-2 border-dashed border-white/10 rounded-2xl p-12 text-center bg-white/[0.02]">
+            <div className="text-6xl mb-4">🚀</div>
+            <AnimatedGradientText
+              className="text-2xl font-bold mb-2"
+              colorFrom="#22c55e"
+              colorTo="#16a34a"
+              speed={1.2}
+            >
+              More Problems Coming Soon!
+            </AnimatedGradientText>
+            <p className="text-white/50 mt-2">Stay tuned for additional challenges</p>
           </div>
         </section>
 
-        <section className="mb-20">
-          <h2 className="text-2xl font-bold text-white mb-4">Note</h2>
-          <div className="border border-white/10 rounded-lg p-6 space-y-4">
-            <p className="text-white/50 text-sm leading-relaxed">
-              Problem tracks are designed for student thinking and innovation while Problem Statements are short product-oriented examples.
-            </p>
-            <p className="text-white/50 text-sm leading-relaxed">
-              Participants may choose either a track or a problem statement, and there is no fixed mapping or evaluation difference between them—choose what best fits your idea.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-t border-white/10 pt-16">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Ready to Participate?
+        {/* Important Note */}
+        <section className="mb-24">
+          <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="text-3xl">💡</span>
+              <Highlight className="text-white">Important Note</Highlight>
             </h2>
-            <p className="text-white/50 mb-8 max-w-lg mx-auto">
-              Register your team on Unstop to participate in the hackathon.
+            <div className="space-y-4 text-white/70 text-lg leading-relaxed">
+              <p>
+                <Cover>Problem tracks</Cover> are designed for{" "}
+                <Highlight className="text-white font-semibold">student thinking and innovation</Highlight>{" "}
+                while Problem Statements are short product-oriented examples.
+              </p>
+              <p>
+                Participants may choose either a track or a problem statement, and there is{" "}
+                <Highlight className="text-white font-semibold">no fixed mapping or evaluation difference</Highlight>{" "}
+                between them—choose what best fits your idea.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="border-t border-white/10 pt-20">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Ready to <Cover>Participate</Cover>?
+            </h2>
+            <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+              Register your team on <Highlight className="text-white font-semibold">Unstop</Highlight> to participate in the hackathon.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href={UNSTOP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors"
               >
-                Register on Unstop
+                <RainbowButton className="text-lg px-10 py-4">
+                  Register on Unstop →
+                </RainbowButton>
               </a>
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center border border-white/20 text-white px-8 py-3 rounded-full font-medium hover:bg-white/5 transition-colors"
-              >
-                Back to Home
+              <Link href="/">
+                <button className="inline-flex items-center justify-center border-2 border-white/20 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 hover:border-white/40 transition-all duration-300">
+                  <ArrowLeft className="w-5 h-5 mr-2" />
+                  Back to Home
+                </button>
               </Link>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-white/30 text-sm">
-            2026 Loop Hackathon - Innovation and Robotics Lab
+      {/* Footer */}
+      <footer className="relative border-t border-white/10 py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white/40 text-sm">
+            © 2026 Loop Hackathon · <Cover>Innovation & Robotics Lab</Cover>
           </p>
         </div>
       </footer>

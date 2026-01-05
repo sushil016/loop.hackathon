@@ -18,13 +18,13 @@ export default function Home() {
         <div className="section-divider" />
         <About />
         <div className="section-divider" />
-        <Prizes />
+        {/* <Prizes /> */}
         <div className="section-divider" />
         <Rules />
         <div className="section-divider" />
         <Timeline />
         <div className="section-divider" />
-        <Tracks />
+        {/* <Tracks /> */}
         <div className="section-divider" />
         <Sponsors />
         <div className="section-divider" />

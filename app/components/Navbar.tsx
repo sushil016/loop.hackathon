@@ -21,6 +21,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +40,37 @@ export default function Navbar() {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
+
+  // Intersection Observer to track active section
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -80% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(`#${entry.target.id}`);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    navLinks.forEach((link) => {
+      const element = document.querySelector(link.href);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const scrollToSection = (href: string) => {
     setIsOpen(false);
@@ -69,49 +101,34 @@ export default function Navbar() {
               height={48}
               className="rounded-lg md:w-16 md:h-16"
             />
-            
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Moved to right side */}
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
+                className={`text-lg font-semibold transition-all duration-300 relative group ${
+                  activeSection === link.href
+                    ? "text-white"
+                    : "text-gray-300 hover:text-white"
+                }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full" />
+                <span 
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 shadow-[0_0_8px_rgba(59,130,246,0.5)] ${
+                    activeSection === link.href
+                      ? "w-full shadow-[0_0_12px_rgba(59,130,246,0.8)]"
+                      : "w-0 group-hover:w-full group-hover:shadow-[0_0_12px_rgba(59,130,246,0.8)]"
+                  }`}
+                />
               </button>
             ))}
           </div>
 
-          {/* Right side buttons */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            {/* Dark Mode Toggle */}
-            {/* <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-full glass hover:bg-white/10 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-blue-500" />
-              )}
-            </button> */}
-
-            {/* Register Button (Desktop) */}
-            <a
-              href={UNSTOP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:block btn-primary px-6 py-2 rounded-full text-white font-medium text-sm"
-            >
-              Register Now
-            </a>
-
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 rounded-lg glass"
@@ -134,19 +151,15 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-left py-2 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                  className={`text-left py-3 px-4 text-base font-semibold rounded-lg transition-all duration-300 ${
+                    activeSection === link.href
+                      ? "text-white bg-white/10 translate-x-1"
+                      : "text-gray-300 hover:text-white hover:bg-white/10 hover:translate-x-1"
+                  }`}
                 >
                   {link.name}
                 </button>
               ))}
-              <a
-                href={UNSTOP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary px-6 py-3 rounded-full text-white font-medium text-center mt-2"
-              >
-                Register Now
-              </a>
             </div>
           </div>
         )}

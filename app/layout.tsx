@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import RegistrationBanner from "./components/RegistrationBanner";
+import LoadingProvider from "./components/LoadingProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,10 +36,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
-        <RegistrationBanner />
-        <div className="pt-12">
-          {children}
-        </div>
+        <LoadingProvider minimumLoadingTime={2500}>
+          <RegistrationBanner />
+          <div className="pt-12">
+            {children}
+          </div>
+        </LoadingProvider>
       </body>
     </html>
   );

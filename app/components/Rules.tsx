@@ -1,196 +1,194 @@
 "use client";
 
-import { 
-  Users, 
-  FileText, 
-  Shield, 
-  Video, 
-  Eye, 
-  MessageSquare, 
-  AlertCircle,
-  CheckCircle,
-  XCircle
-} from "lucide-react";
-
-const rules = [
-  {
-    icon: Users,
-    title: "Eligibility",
-    items: [
-      "Any Undergraduate pursuing Bachelor's Degree in any field",
-      "Team Size: 4 - 6 members only",
-      "Inter-college team participation is allowed",
-    ],
-  },
-  {
-    icon: FileText,
-    title: "Submission Requirements",
-    items: [
-      "Prepare a PowerPoint/Canva presentation using official template",
-      "Submit Final PPT on Unstop dashboard",
-      "Include Prototype (code repo, screenshots, or demo)",
-      "Optional: Video presentation explaining the solution",
-      "Deadline: 30th January 2026",
-    ],
-  },
-  {
-    icon: Shield,
-    title: "Originality & Authenticity",
-    items: [
-      "All submitted content must be original work",
-      "Created by the participating team only",
-      "Plagiarism will result in disqualification",
-    ],
-  },
-  {
-    icon: Video,
-    title: "Prototype & Video Guidelines",
-    items: [
-      "Prototype should clearly demonstrate core idea",
-      "Video should be concise and clear",
-      "Explain problem, solution, and demo",
-      "Follow time limit in submission guidelines",
-      "Working prototype = higher evaluation scores",
-    ],
-  },
-  {
-    icon: Eye,
-    title: "Evaluation Process",
-    items: [
-      "Based on PPT, Prototype, and Video",
-      "Criteria: Innovation, Originality, Technical Complexity",
-      "Judge's decision is final and binding",
-    ],
-  },
-  {
-    icon: MessageSquare,
-    title: "Communication & Updates",
-    items: [
-      "Updates via registered email & Unstop platform",
-      "Team leaders must check regularly",
-      "Official announcements only through these channels",
-    ],
-  },
-];
-
-const dosAndDonts = {
-  dos: [
-    "Register your team before the deadline",
-    "Read all guidelines carefully",
-    "Build a working prototype",
-    "Maintain professional conduct",
-    "Check emails and Unstop regularly",
-  ],
-  donts: [
-    "Share problem statements outside the event",
-    "Submit plagiarized content",
-    "Exceed team size limits",
-    "Miss submission deadlines",
-    "Engage in any form of misconduct",
-  ],
-};
+import { ShineBorder } from "@/components/ui/shine-border";
+import { Highlight } from "@/components/ui/hero-highlight";
+import { Cover } from "@/components/ui/cover";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 export default function Rules() {
   return (
-    <section id="rules" className="relative py-24 bg-black/50">
+    <section id="rules" className="relative py-28 bg-black">
+      {/* Subtle background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Rules & <span className="gradient-text">Guidelines</span>
+        <div className="mb-20">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Rules &{" "}
+            <PointerHighlight
+              rectangleClassName="border-2 border-cyan-500"
+              pointerClassName="text-cyan-500"
+            >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-500">
+                Guidelines
+              </span>
+            </PointerHighlight>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Please read and follow all rules to ensure a fair and enjoyable experience
+          <p className="text-xl text-white/70 max-w-3xl">
+            Essential guidelines to ensure a fair and impactful hackathon experience
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mt-4" />
         </div>
 
-        {/* Rules Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {rules.map((rule, index) => (
-            <div key={rule.title} className="glass p-6 rounded-2xl card-hover">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                  <rule.icon className="w-5 h-5 text-blue-400" />
-                </div>
-                <h3 className="font-semibold">{rule.title}</h3>
+        {/* Main Content */}
+        <div className="space-y-16">
+          {/* Eligibility */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
+              Eligibility
+            </h3>
+            <div className="pl-8 text-xl text-white/90 leading-relaxed">
+              <Highlight className="text-white font-bold">
+                Any Undergraduate
+              </Highlight>
+              <span> pursuing Bachelor's Degree in any field can participate. Team size must be </span>
+              <Highlight className="text-white font-bold">
+                3 to 6 members
+              </Highlight>
+              <span> only. </span>
+              <Cover className="text-white font-bold">
+                Inter-college teams are welcome
+              </Cover>
+              <span>.</span>
+            </div>
+          </div>
+
+          {/* Submission Requirements */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full" />
+              Submission Requirements
+            </h3>
+            <div className="pl-8 space-y-6">
+              <div className="text-xl text-white/90 leading-relaxed">
+                <span>Submissions open from </span>
+                <Highlight className="text-white font-bold">
+                  20th January
+                </Highlight>
+                <span>. Prepare a </span>
+                <Highlight className="text-white font-bold">
+                  PowerPoint/Canva presentation
+                </Highlight>
+                <span> using the official template and submit your </span>
+                <Cover className="text-white font-bold">
+                  Final PPT on Unstop dashboard
+                </Cover>
+                <span>. Include </span>
+                <Highlight className="text-white font-bold">
+                  Prototype
+                </Highlight>
+                <span> (code repo, screenshots, or demo). Video presentation is optional.</span>
               </div>
-              <ul className="space-y-2">
-                {rule.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-400">
-                    <span className="text-blue-400 mt-0.5">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              
+              {/* Deadline Card */}
+              <div className="inline-block">
+                <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 backdrop-blur-sm rounded-xl px-6 py-4 border-2 border-red-500/30">
+                  <AnimatedGradientText
+                    className="text-xl font-bold"
+                    colorFrom="#ef4444"
+                    colorTo="#f97316"
+                    speed={1.5}
+                  >
+                    Deadline: 30th January 2026
+                  </AnimatedGradientText>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Evaluation */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full" />
+              Evaluation Process
+            </h3>
+            <div className="pl-8 text-xl text-white/90 leading-relaxed">
+              <span>Evaluation based on </span>
+              <Highlight className="text-white font-bold">
+                PPT, Prototype, and Video
+              </Highlight>
+              <span>. Key criteria include </span>
+              <Cover className="text-white font-bold">
+                Innovation, Originality, and Technical Complexity
+              </Cover>
+              <span>. Working prototype receives higher evaluation scores. Judge's decision is </span>
+              <Highlight className="text-white font-bold">
+                final and binding
+              </Highlight>
+              <span>.</span>
+            </div>
+          </div>
+
+          {/* Originality */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full" />
+              Originality & Authenticity
+            </h3>
+            <div className="pl-8">
+              <div className="text-xl text-white/90 leading-relaxed mb-6">
+                <span>All submitted content must be </span>
+                <Highlight className="text-white font-bold">
+                  original work
+                </Highlight>
+                <span> created by the participating team only. </span>
+                <Cover className="text-white font-bold">
+                  Plagiarism will result in disqualification
+                </Cover>
+                <span>.</span>
+              </div>
+
+              {/* Warning Card */}
+              <div className="inline-block">
+                <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 backdrop-blur-sm rounded-xl px-6 py-4 border-2 border-yellow-500/30">
+                  <p className="text-yellow-400 font-semibold">
+                    ⚠️ Any breach of confidentiality or unfair advantage will result in immediate disqualification
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Communication */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <span className="w-1.5 h-8 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full" />
+              Communication & Updates
+            </h3>
+            <div className="pl-8 text-xl text-white/90 leading-relaxed">
+              <span>All updates will be sent via </span>
+              <Highlight className="text-white font-bold">
+                registered email & Unstop platform
+              </Highlight>
+              <span>. Team leaders must </span>
+              <Cover className="text-white font-bold">
+                check regularly
+              </Cover>
+              <span> for official announcements.</span>
+            </div>
+          </div>
+
+          {/* Important Notice */}
+          <div className="mt-16">
+            <div className="relative rounded-2xl bg-gradient-to-r from-white/[0.03] to-white/[0.01] p-8 md:p-10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+              <div className="relative z-10 text-center">
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                  By submitting entries for Loop, participants confirm that they have read, understood, and agreed to abide by all the{" "}
+                  <Cover>
+                    <span className="font-bold text-white">terms and conditions</span>
+                  </Cover>
+                  . For detailed guidelines, please refer to the official rulebook.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* Confidentiality Notice */}
-        {/* <div className="glass-strong p-6 rounded-2xl border border-yellow-500/30 mb-16">
-          <div className="flex items-start gap-4">
-            <AlertCircle className="w-8 h-8 text-yellow-400 flex-shrink-0" />
-            <div>
-              <h3 className="text-lg font-semibold text-yellow-400 mb-2">Confidentiality & Fair Play</h3>
-              <p className="text-gray-400 text-sm">
-                Participants must not share, publish, or disclose any problem statements, evaluation materials, 
-                or solutions outside the scope of the event. Any breach of confidentiality or attempt to gain 
-                unfair advantage will result in immediate disqualification.
-              </p>
-            </div>
-          </div>
-        </div> */}
-
-   
-          
-          {/* <div className="glass p-6 rounded-2xl border border-green-500/30">
-            <div className="flex items-center gap-3 mb-6">
-              <CheckCircle className="w-8 h-8 text-green-400" />
-              <h3 className="text-xl font-bold text-green-400">Do's</h3>
-            </div>
-            <ul className="space-y-3">
-              {dosAndDonts.dos.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
-          {/* Don'ts */}
-          {/* <div className="glass p-6 rounded-2xl border border-red-500/30">
-            <div className="flex items-center gap-3 mb-6">
-              <XCircle className="w-8 h-8 text-red-400" />
-              <h3 className="text-xl font-bold text-red-400">Don'ts</h3>
-            </div>
-            <ul className="space-y-3">
-              {dosAndDonts.donts.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-        
-
-        {/* Code of Conduct */}
-        {/* <div className="mt-16 text-center">
-          <div className="glass p-8 rounded-3xl max-w-2xl mx-auto">
-            <Shield className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-4">Code of Conduct</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              By submitting entries for the Online Evaluation Round of Loop, participants confirm 
-              that they have read, understood, and agreed to abide by all the terms and conditions.
-            </p>
-            <p className="text-gray-400 text-sm">
-              Participants are expected to maintain professional and ethical conduct throughout the event. 
-              Any form of misconduct or violation may lead to disqualification.
-            </p>
-          </div>
-        </div> */}
       </div>
     </section>
   );
