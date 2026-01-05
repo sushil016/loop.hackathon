@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import LoadingAnimation from "./LoadingAnimation";
 
 interface LoadingProviderProps {
@@ -14,8 +15,18 @@ export default function LoadingProvider({
 }: LoadingProviderProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isFading, setIsFading] = useState(false);
+  const pathname = usePathname();
+  
+  // Don't show loading animation on problem-statements page
+  const shouldShowLoading = pathname !== "/problem-statements";
 
   useEffect(() => {
+    // Skip loading animation for problem-statements page
+    if (!shouldShowLoading) {
+      setIsLoading(false);
+      return;
+    }
+
     // Minimum loading time for smooth UX
     const timer = setTimeout(() => {
       setIsFading(true);
@@ -26,11 +37,11 @@ export default function LoadingProvider({
     }, minimumLoadingTime);
 
     return () => clearTimeout(timer);
-  }, [minimumLoadingTime]);
+  }, [minimumLoadingTime, shouldShowLoading]);
 
   return (
     <>
-      {isLoading && (
+      {isLoading && shouldShowLoading && (
         <div
           className={`transition-opacity duration-500 ${
             isFading ? "opacity-0" : "opacity-100"

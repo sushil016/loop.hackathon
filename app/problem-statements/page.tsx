@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
@@ -7,8 +8,21 @@ import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { Cover } from "@/components/ui/cover";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { MultiStepLoader } from "@/components/ui/multi-step-loader";
 
 const UNSTOP_LINK = "https://unstop.com/p/loop-10-24-hr-national-level-hackathon-bharati-vidyapeeth-college-of-engineering-bvcoe-navi-mumbai-1617554";
+
+const loadingStates = [
+  {
+    text: "Loading Problem Tracks",
+  },
+  {
+    text: "Loading Problem Statements",
+  },
+  {
+    text: "More Problem Statements Coming Soon",
+  },
+];
 
 const problemTracks = [
   {
@@ -94,8 +108,27 @@ const softwareProblems = [
 ];
 
 export default function ProblemStatements() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Show loader for 6 seconds (2 seconds per step) on every visit
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 6000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Multi-Step Loader */}
+      <MultiStepLoader
+        loadingStates={loadingStates}
+        loading={loading}
+        duration={2000}
+        loop={false}
+      />
+
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
