@@ -18,7 +18,7 @@ const rules = [
     title: "Eligibility",
     items: [
       "Any Undergraduate pursuing Bachelor's Degree in any field",
-      "Team Size: 4 - 6 members only",
+      "Team Size: 3 - 6 members only",
       "Inter-college team participation is allowed",
     ],
   },
