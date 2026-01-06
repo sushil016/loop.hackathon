@@ -9,10 +9,8 @@ const UNSTOP_LINK = "https://unstop.com/p/loop-10-24-hr-national-level-hackathon
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Timeline", href: "#timeline" },
-  { name: "Tracks", href: "#tracks" },
-  { name: "Prizes", href: "#prizes" },
   { name: "Rules", href: "#rules" },
+  { name: "Timeline", href: "#timeline" },
   { name: "Sponsors", href: "#sponsors" },
   { name: "FAQ", href: "#faq" },
 ];
@@ -76,12 +74,31 @@ export default function Navbar() {
     setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const navbarHeight = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      // Lenis will handle the smooth scrolling
+      window.scrollTo({
+        top: offsetPosition,
+      });
     }
   };
 
   return (
     <div className="fixed top-12 left-0 right-0 z-50 px-4 md:flex md:justify-center">
+      <style jsx global>{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
       <nav
         className={`transition-all duration-300 md:rounded-full rounded-2xl border border-white/10 bg-black/80 backdrop-blur-md w-full py-3 ${
           scrolled ? "md:w-[70%] md:py-2" : "md:w-[80%]"
@@ -97,19 +114,19 @@ export default function Navbar() {
             <Image
               src="/loop-logo2.png"
               alt="Loop Logo"
-              width={48}
-              height={48}
-              className="rounded-lg md:w-16 md:h-16"
+              width={40}
+              height={40}
+              className="rounded-lg md:w-12 md:h-12"
             />
           </Link>
 
-          {/* Desktop Navigation - Moved to right side */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:pl-72 items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className={`text-lg font-semibold transition-all duration-300 relative group ${
+                className={`text-[30px] font-semibold transition-all duration-300 relative group ${
                   activeSection === link.href
                     ? "text-white"
                     : "text-gray-300 hover:text-white"
@@ -117,7 +134,7 @@ export default function Navbar() {
               >
                 {link.name}
                 <span 
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 shadow-[0_0_8px_rgba(59,130,246,0.5)] ${
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-red-700 to-red-500 transition-all duration-300 shadow-[0_0_8px_rgba(59,130,246,0.5)] ${
                     activeSection === link.href
                       ? "w-full shadow-[0_0_12px_rgba(59,130,246,0.8)]"
                       : "w-0 group-hover:w-full group-hover:shadow-[0_0_12px_rgba(59,130,246,0.8)]"
@@ -144,10 +161,14 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden mt-4 p-4 border-t border-white/10">
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="mt-4 p-4 border-t border-white/10">
             <div className="flex flex-col space-y-3">
-              {navLinks.map((link) => (
+              {navLinks.map((link, index) => (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
@@ -156,13 +177,17 @@ export default function Navbar() {
                       ? "text-white bg-white/10 translate-x-1"
                       : "text-gray-300 hover:text-white hover:bg-white/10 hover:translate-x-1"
                   }`}
+                  style={{
+                    animationDelay: `${index * 50}ms`,
+                    animation: isOpen ? 'slideIn 0.3s ease-out forwards' : 'none'
+                  }}
                 >
                   {link.name}
                 </button>
               ))}
             </div>
           </div>
-        )}
+        </div>
       </div>
       </nav>
     </div>

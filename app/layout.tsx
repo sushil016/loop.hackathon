@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import RegistrationBanner from "./components/RegistrationBanner";
 import LoadingProvider from "./components/LoadingProvider";
+import CustomCursor from "./components/CustomCursor";
+import LenisProvider from "./components/LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,14 +36,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white cursor-none`}
       >
-        <LoadingProvider minimumLoadingTime={2500}>
-          <RegistrationBanner />
-          <div className="pt-12">
-            {children}
-          </div>
-        </LoadingProvider>
+        <LenisProvider>
+          <CustomCursor />
+          <LoadingProvider minimumLoadingTime={2500}>
+            <RegistrationBanner />
+            <div className="pt-12">
+              {children}
+            </div>
+          </LoadingProvider>
+        </LenisProvider>
       </body>
     </html>
   );

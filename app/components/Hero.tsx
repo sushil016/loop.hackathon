@@ -8,14 +8,16 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { motion } from "motion/react";
+import Particles from "@/components/Particles";
+import { Lens } from "@/components/ui/lens";
 
 const UNSTOP_LINK = "https://unstop.com/p/loop-10-24-hr-national-level-hackathon-bharati-vidyapeeth-college-of-engineering-bvcoe-navi-mumbai-1617554";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Hero Background Image */}
-      <div className="absolute inset-0">
+      {/* Hero Background Image - Layer 1 */}
+      <div className="absolute inset-0 z-0">
         {/* <Image
           src="/loop-hero-background.png"
           alt=""
@@ -34,32 +36,53 @@ export default function Hero() {
         />
       </div>
 
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      {/* Particles Layer - Layer 2 */}
+      <div className="absolute inset-0 z-[1]">
+        <Particles
+          particleCount={300}
+          particleSpread={15}
+          speed={0.05}
+          particleColors={['#60a5fa', '#a855f7', '#ec4899', '#f59e0b']}
+          moveParticlesOnHover={true}
+          particleHoverFactor={0.5}
+          alphaParticles={true}
+          particleBaseSize={80}
+          sizeRandomness={1.5}
+          cameraDistance={20}
+          disableRotation={false}
+          className="w-full h-full"
+        />
+      </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+      {/* Subtle Grid Pattern - Layer 3 */}
+      <div className="absolute inset-0 z-[2] bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+      {/* Content Layer - Layer 4 */}
+      <div className="relative z-[10] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
         {/* Premium Badge */}
         <div className="inline-flex items-center gap-3 border border-white/10 bg-white/5 backdrop-blur-sm px-5 py-2.5 rounded-full mb-12 animate-fade-in-up">
           <AnimatedGradientText 
             className="text-sm font-semibold tracking-wide"
             colorFrom="#60a5fa"
-            colorTo="#a855f7"
+            colorTo="#f60f0fff"
             speed={1.5}
           >
             24 hours National Level Hackathon
           </AnimatedGradientText>
         </div>
 
-        {/* LOOP Text Image */}
-        <div className="mb-6 animate-fade-in-up delay-100">
-          <Image
-            src="/loop-text.png"
-            alt="LOOP"
-            width={600}
-            height={200}
-            className="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto mx-auto"
-            priority
-          />
+        {/* LOOP Text Image with Lens Effect */}
+        <div className="mb-6 animate-fade-in-up delay-100 flex justify-center">
+          <Lens zoomFactor={1.3} lensSize={180}>
+            <Image
+              src="/loop-text.png"
+              alt="LOOP"
+              width={600}
+              height={200}
+              className="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto cursor-hover"
+              priority
+            />
+          </Lens>
         </div>
 
         {/* Animated Tagline with LayoutTextFlip */}

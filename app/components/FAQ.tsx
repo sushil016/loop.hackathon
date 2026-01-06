@@ -69,6 +69,12 @@ export default function FAQ() {
 
   const displayedFaqs = showAll ? allFaqs : faqs;
 
+  // Reset openIndex when toggling showAll to prevent index mismatch
+  const handleShowAllToggle = () => {
+    setShowAll(!showAll);
+    setOpenIndex(null);
+  };
+
   return (
     <section id="faq" className="relative py-28 bg-black">
       {/* Subtle background */}
@@ -105,7 +111,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full py-6 flex items-start justify-between text-left group"
+                className="w-full py-6 flex items-start justify-between text-left group cursor-pointer"
               >
                 <div className="flex items-start gap-6 flex-1">
                   <span className="text-white/20 text-sm font-mono mt-1 flex-shrink-0">
@@ -142,7 +148,7 @@ export default function FAQ() {
         {/* Show More/Less Button */}
         <div className="mt-12 text-center">
           <RainbowButton 
-            onClick={() => setShowAll(!showAll)} 
+            onClick={handleShowAllToggle} 
             className="px-8 py-3"
           >
             {showAll ? "See Less FAQs" : "See More FAQs"}

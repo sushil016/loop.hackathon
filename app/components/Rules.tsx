@@ -39,7 +39,7 @@ export default function Rules() {
           {/* Eligibility */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
+              <span className="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-blue-700" />
               Eligibility
             </h3>
             <div className="pl-8 text-xl text-white/90 leading-relaxed">
@@ -61,7 +61,7 @@ export default function Rules() {
           {/* Submission Requirements */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="w-1.5 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full" />
+              <span className="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-blue-700 " />
               Submission Requirements
             </h3>
             <div className="pl-8 space-y-6">
@@ -87,14 +87,14 @@ export default function Rules() {
               
               {/* Deadline Card */}
               <div className="inline-block">
-                <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 backdrop-blur-sm rounded-xl px-6 py-4 border-2 border-red-500/30">
+                <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 backdrop-blur-sm rounded-xl px-4 py-2 border-2 border-red-500/30">
                   <AnimatedGradientText
                     className="text-xl font-bold"
                     colorFrom="#ef4444"
                     colorTo="#f97316"
                     speed={1.5}
                   >
-                    Deadline: 30th January 2026
+                    Registration Deadline: 31st January 2026
                   </AnimatedGradientText>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function Rules() {
           {/* Evaluation */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="w-1.5 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full" />
+              <span className="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-blue-700" />
               Evaluation Process
             </h3>
             <div className="pl-8 text-xl text-white/90 leading-relaxed">
@@ -125,7 +125,7 @@ export default function Rules() {
           </div>
 
           {/* Originality */}
-          <div>
+          {/* <div>
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="w-1.5 h-8 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full" />
               Originality & Authenticity
@@ -144,7 +144,7 @@ export default function Rules() {
               </div>
 
               {/* Warning Card */}
-              <div className="inline-block">
+              {/* <div className="inline-block">
                 <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 backdrop-blur-sm rounded-xl px-6 py-4 border-2 border-yellow-500/30">
                   <p className="text-yellow-400 font-semibold">
                     ⚠️ Any breach of confidentiality or unfair advantage will result in immediate disqualification
@@ -152,12 +152,12 @@ export default function Rules() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */} 
 
           {/* Communication */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="w-1.5 h-8 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full" />
+              <span className="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-blue-700" />
               Communication & Updates
             </h3>
             <div className="pl-8 text-xl text-white/90 leading-relaxed">
@@ -174,7 +174,7 @@ export default function Rules() {
           </div>
 
           {/* Important Notice */}
-          <div className="mt-16">
+          {/* <div className="mt-16">
             <div className="relative rounded-2xl bg-gradient-to-r from-white/[0.03] to-white/[0.01] p-8 md:p-10 overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
               <div className="relative z-10 text-center">
@@ -187,7 +187,7 @@ export default function Rules() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

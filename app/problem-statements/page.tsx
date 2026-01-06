@@ -9,6 +9,7 @@ import { Cover } from "@/components/ui/cover";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { MultiStepLoader } from "@/components/ui/multi-step-loader";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 const UNSTOP_LINK = "https://unstop.com/p/loop-10-24-hr-national-level-hackathon-bharati-vidyapeeth-college-of-engineering-bvcoe-navi-mumbai-1617554";
 
@@ -189,35 +190,40 @@ export default function ProblemStatements() {
             </AnimatedGradientText>
           </div>
           
-          <div className="space-y-6">
-            {problemTracks.map((track, index) => (
-              <div
-                key={track.id}
-                className="group relative bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 hover:border-white/20 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
-              >
-                <div className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-white/10">
-                      <span className="text-2xl font-bold text-white">
-                        {String(track.id).padStart(2, '0')}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all">
-                      {track.title}
-                    </h3>
-                    <p className="text-white/70 text-lg leading-relaxed">
-                      {track.description}
-                    </p>
-                    {track.constraint && (
-                      <div className="mt-4 p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                        <p className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-2">⚡ Constraint</p>
-                        <p className="text-white/60 text-base leading-relaxed">
-                          {track.constraint}
-                        </p>
+          <div className="grid gap-6 md:gap-8">
+            {problemTracks.map((track) => (
+              <div key={track.id} className="relative">
+                <ShineBorder
+                  shineColor={["#60a5fa", "#a855f7", "#ec4899"]}
+                  duration={10}
+                  borderWidth={2}
+                  className="rounded-2xl"
+                />
+                <div className="relative bg-gradient-to-br from-black/90 to-black/70 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <div className="flex-shrink-0 self-start">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-blue-500/30 to-purple-500/30 flex items-center justify-center border border-white/20 backdrop-blur-sm">
+                        <span className="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-400">
+                          {track.id}
+                        </span>
                       </div>
-                    )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight">
+                        {track.title}
+                      </h3>
+                      <p className="text-white/70 text-base sm:text-lg leading-relaxed">
+                        {track.description}
+                      </p>
+                      {track.constraint && (
+                        <div className="mt-4 p-3 sm:p-4 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
+                          <p className="text-blue-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">⚡ Constraint</p>
+                          <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+                            {track.constraint}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -241,27 +247,32 @@ export default function ProblemStatements() {
             </AnimatedGradientText>
           </div>
           
-          <div className="space-y-6">
+          <div className="grid gap-6 md:gap-8">
             {softwareProblems.map((problem) => (
-              <div
-                key={problem.id}
-                className="group relative bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 hover:border-orange-500/30 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10"
-              >
-                <div className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border border-white/10">
-                      <span className="text-xl font-bold text-white">
-                        S{problem.id}
-                      </span>
+              <div key={problem.id} className="relative">
+                <ShineBorder
+                  shineColor={["#f97316", "#ea580c", "#dc2626"]}
+                  duration={12}
+                  borderWidth={2}
+                  className="rounded-2xl"
+                />
+                <div className="relative bg-gradient-to-br from-black/90 to-black/70 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <div className="flex-shrink-0 self-start">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-orange-500/30 to-red-500/30 flex items-center justify-center border border-white/20 backdrop-blur-sm">
+                        <span className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-400">
+                          {problem.id}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-red-400 transition-all">
-                      {problem.title}
-                    </h3>
-                    <p className="text-white/70 text-lg leading-relaxed">
-                      {problem.description}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight">
+                        {problem.title}
+                      </h3>
+                      <p className="text-white/70 text-base sm:text-lg leading-relaxed">
+                        {problem.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -308,7 +319,7 @@ export default function ProblemStatements() {
         </section>
 
         {/* CTA Section */}
-        <section className="border-t border-white/10 pt-20">
+        {/* <section className="border-t border-white/10 pt-20">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-white mb-4">
               Ready to <Cover>Participate</Cover>?
@@ -334,7 +345,7 @@ export default function ProblemStatements() {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Footer */}

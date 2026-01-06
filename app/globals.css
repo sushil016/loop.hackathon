@@ -3,6 +3,40 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Lenis Smooth Scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed navbar */
+}
+
+/* For better browser support */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 :root {
   --primary: oklch(0.21 0.006 285.885);
   --primary-dark: #1d4ed8;
@@ -397,8 +431,20 @@ body {
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    cursor: none !important;
   }
   body {
     @apply bg-background text-foreground;
+    cursor: none !important;
+  }
+  
+  /* Ensure custom cursor shows on interactive elements */
+  a, button, input, textarea, select {
+    cursor: none !important;
+  }
+  
+  /* Add cursor-hover class for elements that should trigger hover state */
+  .cursor-hover {
+    cursor: none !important;
   }
 }

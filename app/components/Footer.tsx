@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Instagram, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
+import { Mail, Instagram, Twitter, Linkedin, MapPin } from "lucide-react";
 import { Cover } from "@/components/ui/cover";
 
 export default function Footer() {
@@ -118,23 +119,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Address - Full Width */}
+          {/* Address - Full Width with Logo */}
           <div className="mb-10">
-            <h4 className="text-2xl font-bold text-white mb-4">Our Address</h4>
-            <address className="not-italic text-white/90 text-lg leading-relaxed text-center">
-              Bharati Vidyapeeth College of Engineering, Room No: 211, C.B.D Belapur, Sector 7, Navi Mumbai - 400614, Maharashtra, India
-            </address>
+            <h4 className="text-3xl font-bold text-white mb-6">Our Address</h4>
+            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              <address className="not-italic text-white text-2xl lg:text-3xl leading-relaxed text-center lg:text-left font-semibold">
+                Bharati Vidyapeeth College of Engineering, Room No: 211, C.B.D Belapur, Sector 7, Navi Mumbai - 400614, Maharashtra, India
+              </address>
+            </div>
           </div>
 
           {/* Bottom Links */}
           <div className="border-t border-white/20 pt-8">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-white/80 text-base">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-white/80 text-lg">
               <div className="flex items-center gap-6">
-                <Link href="#" className="hover:text-white transition-colors font-medium">
+                <Link href="/policies" className="hover:text-white transition-colors font-medium">
                   Terms & Conditions
                 </Link>
                 <span>·</span>
-                <Link href="#" className="hover:text-white transition-colors font-medium">
+                <Link href="/policies" className="hover:text-white transition-colors font-medium">
                   Privacy Policy
                 </Link>
               </div>
