@@ -8,6 +8,8 @@ import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { HyperText } from "@/components/ui/hyper-text";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { ConfettiButton } from "@/components/ui/confetti";
+import { RippleButton } from "@/components/ui/ripple-button";
+import { Download } from "lucide-react";
 
 export default function About() {
   return (
@@ -35,7 +37,7 @@ export default function About() {
         </div>
 
         {/* Main Content - Full Width */}
-        <div className="w-full space-y-12 mb-24">
+        <div className="w-full space-y-12 mb-16">
           {/* Content with Highlights */}
           <div className="w-full text-xl text-white/90 leading-relaxed">
             <Highlight className="text-white font-bold">
@@ -58,21 +60,11 @@ export default function About() {
               What sets Loop apart is its focus on depth over speed. We challenge participants to think in systems — considering failure, iteration, and real-world constraints from day one.
             </p>
           </div>
-
-          {/* Key Point */}
-          {/* <div className="flex items-center gap-4 pt-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
-              <span className="text-xl">⚡</span>
-            </div>
-            <p className="text-xl font-medium text-white">
-              It's not about building fast — it's about building right.
-            </p>
-          </div> */}
         </div>
 
         {/* Event Details Section */}
-        <div className="mb-24">
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* Dates */}
             <div className="relative group">
               <div className="absolute -left-1 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-red-600 rounded-full" />
@@ -142,47 +134,19 @@ export default function About() {
           </div>
 
           {/* Download Resources Section */}
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/Loop_Brochure.pdf"
-              download
-              className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/50"
-            >
-              <svg
-                className="w-6 h-6 group-hover:animate-bounce"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-              Download Official Brochure
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+            <a href="/Loop_Brochure.pdf" download>
+              <RippleButton className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">
+                <Download className="w-5 h-5" />
+                Official Brochure
+              </RippleButton>
             </a>
 
-            <a
-              href="/Loop-PPT.pdf"
-              download
-              className="group relative inline-flex items-center justify-center gap-3 border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105"
-            >
-              <svg
-                className="w-6 h-6 group-hover:animate-bounce"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-              Download PPT Template
+            <a href="/Loop-PPT.pdf" download>
+              <RippleButton className="inline-flex items-center justify-center gap-3 border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg bg-white/5">
+                <Download className="w-5 h-5" />
+                Download PPT Template
+              </RippleButton>
             </a>
           </div>
 
@@ -216,17 +180,6 @@ export default function About() {
             </div>
           </div>
         </div>
-
-        {/* Organizer with Cover
-        <div className="text-center mt-16">
-          <p className="text-white/30 text-sm uppercase tracking-widest mb-3">Organized By</p>
-          <div className="inline-block">
-            <Cover>
-              <p className="text-xl font-semibold text-white">Innovation & Robotics Lab</p>
-            </Cover>
-          </div>
-          {/* <p className="text-white/50 mt-2">Bharati Vidyapeeth College of Engineering, Navi Mumbai</p> */}
-        {/* </div> */}
       </div>
     </section>
   );

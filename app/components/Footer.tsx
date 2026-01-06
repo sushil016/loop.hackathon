@@ -16,7 +16,7 @@ export default function Footer() {
             {/* Quote - Left */}
             <div className="flex items-center">
               <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                <Cover>Innovation Beyond Speed</Cover>,<br />
+                <Cover>Innovation Beyond Speed</Cover><br />
                 <Cover>Solutions Beyond Code</Cover>
               </p>
             </div>
