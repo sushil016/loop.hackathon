@@ -7,7 +7,7 @@
 
 Official website for **Loop** - a 24-hour National Level Hackathon organized by the Innovation & Robotics Lab at Bharati Vidyapeeth College of Engineering, Navi Mumbai.
 
-🌐 **Live Website:** [loophackathon.tech]
+🌐 **Live Website:** [loophackathon](loophackathon.tech)
 
 ---
 
