@@ -128,7 +128,7 @@ export default function Sponsors() {
                   Multiple sponsorship tiers available. Contact us to discuss partnership opportunities
                   and customize your sponsorship package
                 </p>
-                <a href="mailto:loop.hackathon26@gmail.com?subject=Sponsorship%20Inquiry%20-%20Loop%20Hackathon">
+                <a href="mailto:loop.hackathon@bvcoenm.edu.in">
                   <RainbowButton className="text-lg px-8 py-4">
                     Contact for Sponsorship
                   </RainbowButton>
