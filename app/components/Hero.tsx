@@ -1,6 +1,8 @@
 "use client";
 
-// import { Calendar, MapPin, Clock, ArrowRight, FileText, Sparkles } from "lucide-react";
+// 1. Import the font from Google Fonts via Next.js
+import { Orbitron } from "next/font/google"; 
+
 import Image from "next/image";
 import Link from "next/link";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
@@ -10,16 +12,22 @@ import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { motion } from "motion/react";
 import Particles from "@/components/Particles";
 import { Lens } from "@/components/ui/lens";
-import CountdownTimer from "./CountdownTimer"; // <--- 1. Imported here
+import CountdownTimer from "./CountdownTimer";
+
+// 2. Configure the font
+const orbitron = Orbitron({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-orbitron",
+});
 
 const UNSTOP_LINK = "https://unstop.com/p/loop-10-24-hr-national-level-hackathon-bharati-vidyapeeth-college-of-engineering-bvcoe-navi-mumbai-1617554";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Hero Background Image - Layer 1 */}
+      {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
-        {/* Dark overlay for text visibility */}
         <div className="absolute inset-0 bg-black/10 opacity-20" />
         <Image
           src="/homepage2.jpeg"
@@ -30,7 +38,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Particles Layer - Layer 2 */}
+      {/* Particles Layer */}
       <div className="absolute inset-0 z-[1]">
         <Particles
           particleCount={300}
@@ -48,10 +56,10 @@ export default function Hero() {
         />
       </div>
 
-      {/* Subtle Grid Pattern - Layer 3 */}
+      {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 z-[2] bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-      {/* Content Layer - Layer 4 */}
+      {/* Content Layer */}
       <div className="relative z-[10] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
         {/* Premium Badge */}
         <div className="inline-flex items-center gap-3 border border-white/10 bg-white/5 backdrop-blur-sm px-5 py-2.5 rounded-full mb-12 animate-fade-in-up">
@@ -79,14 +87,33 @@ export default function Hero() {
           </Lens>
         </div>
 
-        {/* --- TIMER SECTION ADDED HERE --- */}
-        {/* Aligned to start (left) with margin-top for spacing */}
-        <div className="w-full flex justify-center mt-12 mb-8 animate-fade-in-up delay-200">
+        {/* --- POWERED BY SECTION (Updated Font) --- */}
+        <div className="flex flex-col items-center justify-center -mt-2 mb-8 z-20 relative animate-fade-in-up delay-150">
+          <div className="inline-flex items-center gap-3">
+            {/* 3. Apply the Orbitron class here */}
+            <p className={`${orbitron.className} text-white/90 text-sm md:text-base font-bold tracking-[0.2em] uppercase`}>
+              ⚡POWERED BY
+            </p>
+            
+            <div className="relative h-8 w-24 sm:h-10 sm:w-28">
+              <Image
+                src="/Unstop-Logo-White-Medium.png"
+                alt="Unstop"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+        {/* ---------------------------------- */}
+
+        {/* Timer Section */}
+        <div className="w-full flex justify-center mt-8 mb-8 animate-fade-in-up delay-200">
            <CountdownTimer />
         </div>
-        {/* -------------------------------- */}
 
-        {/* Animated Tagline with LayoutTextFlip */}
+        {/* Tagline */}
         <motion.div 
           className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-12 animate-fade-in-up delay-200"
           initial={{ opacity: 0, y: 20 }}
