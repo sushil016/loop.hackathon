@@ -94,7 +94,7 @@ const softwareProblems = [
   {
     id: 3,
     title: "Intelligent Deepfake Detection and Trust Verification System",
-    description: "Build an intelligent monitoring system that continuously analyzes structural stress/strain data to detect early signs of fatigue and predict failure risks in critical infrastructure like bridges. The system should convert raw sensor signals into clear, actionable health insights and alerts for proactive maintenance.",
+    description: "Build an AI-based system to detect deepfake content in images, videos, and audio by identifying visual, audio, and temporal inconsistencies and generating a clear authenticity or trust score. The solution should work on low-quality or compressed media, handle unseen deepfake techniques, provide fast (near real-time) results, minimize false positives on genuine content, and offer basic explainability for its decisions.",
   },
   {
     id: 4,

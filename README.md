@@ -7,7 +7,7 @@
 
 Official website for **Loop** - a 24-hour National Level Hackathon organized by the Innovation & Robotics Lab at Bharati Vidyapeeth College of Engineering, Navi Mumbai.
 
-🌐 **Live Website:** [Add your deployment URL here]
+🌐 **Live Website:** [loophackathon](loophackathon.tech)
 
 ---
 
@@ -72,7 +72,7 @@ Loop Hackathon website is built with **Next.js 16** (App Router) and features pr
 Before you begin, make sure you have the following installed:
 
 - **Node.js** (v18.x or higher) - [Download](https://nodejs.org/)
-- **pnpm** (recommended) - [Install](https://pnpm.io/installation)
+- **pnpm** - [Install](https://pnpm.io/installation)
   ```bash
   npm install -g pnpm
   ```
@@ -95,14 +95,8 @@ cd loop.hackathon
 #### 2. Install Dependencies
 
 ```bash
-# Using pnpm (recommended)
+# Using pnpm 
 pnpm install
-
-# Or using npm
-npm install
-
-# Or using yarn
-yarn install
 ```
 
 #### 3. Verify Installation
@@ -120,12 +114,6 @@ Start the development server:
 ```bash
 # Using pnpm
 pnpm dev
-
-# Or using npm
-npm run dev
-
-# Or using yarn
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
@@ -515,33 +503,6 @@ We welcome contributions! Here's how to contribute:
 
 ---
 
-## 🚀 Deployment
-
-### Deploy on Vercel (Recommended)
-
-1. **Push your code to GitHub**
-
-2. **Import to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-
-3. **Configure & Deploy**
-   - Vercel auto-detects Next.js
-   - Click "Deploy"
-   - Your site is live! 🎉
-
-### Environment Variables (if needed)
-
-Create `.env.local` file:
-
-```env
-# Add any environment variables here
-NEXT_PUBLIC_API_URL=your-api-url
-```
-
----
-
 ## 🐛 Troubleshooting
 
 ### Common Issues & Solutions
@@ -620,12 +581,6 @@ pnpm tsc --noEmit
 
 **Innovation & Robotics Lab**  
 Bharati Vidyapeeth College of Engineering, Navi Mumbai
-
-**Contact Organizers:**
-- Sushil Sahani - +91 99676 12372
-- Rudra Sawant - +91 99676 12372
-
-**Email:** loop.hackathon26@gmail.com
 
 ---
 
