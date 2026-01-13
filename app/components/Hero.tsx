@@ -60,7 +60,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-[2] bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       {/* Content Layer */}
-      <div className="relative z-[10] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+      <div className="relative z-[10] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-44 text-center">
         {/* Premium Badge */}
         <div className="inline-flex items-center gap-3 border border-white/10 bg-white/5 backdrop-blur-sm px-5 py-2.5 rounded-full mb-12 animate-fade-in-up">
           <AnimatedGradientText 
@@ -88,7 +88,7 @@ export default function Hero() {
         </div>
 
         {/* --- POWERED BY SECTION (Updated Font) --- */}
-        <div className="flex flex-col items-center justify-center -mt-2 mb-8 z-20 relative animate-fade-in-up delay-150">
+        <div className="flex flex-col items-center justify-center -mt-2 z-20 relative animate-fade-in-up delay-150">
           <div className="inline-flex items-center gap-3">
             {/* 3. Apply the Orbitron class here */}
             <p className={`${orbitron.className} text-white/90 text-sm md:text-base font-bold tracking-[0.2em] uppercase`}>
@@ -109,13 +109,13 @@ export default function Hero() {
         {/* ---------------------------------- */}
 
         {/* Timer Section */}
-        <div className="w-full flex justify-center mt-8 mb-8 animate-fade-in-up delay-200">
+        {/* <div className="w-full flex justify-center animate-fade-in-up delay-200">
            <CountdownTimer />
-        </div>
+        </div> */}
 
         {/* Tagline */}
         <motion.div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-12 animate-fade-in-up delay-200"
+          className="flex flex-col sm:flex-row mt-12 items-center justify-center gap-2 sm:gap-4 mb-12 animate-fade-in-up delay-200"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}

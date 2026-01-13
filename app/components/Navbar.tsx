@@ -86,7 +86,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed top-12 left-0 right-0 z-50 px-4 md:flex md:justify-center">
+    <div className="fixed top-32 sm:top-20 md:top-16 left-0 right-0 z-50 px-4 md:flex md:justify-center">
       <style jsx global>{`
         @keyframes slideIn {
           from {
