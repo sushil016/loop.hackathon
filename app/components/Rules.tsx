@@ -68,7 +68,7 @@ export default function Rules() {
               <div className="text-xl text-white/90 leading-relaxed">
                 <span>Submissions open from </span>
                 <Highlight className="text-white font-bold">
-                  20th January
+                  24th January
                 </Highlight>
                 <span>. Prepare a </span>
                 <Highlight className="text-white font-bold">
@@ -94,7 +94,7 @@ export default function Rules() {
                     colorTo="#f97316"
                     speed={1.5}
                   >
-                    Registration Deadline: 31st January 2026
+                    Registration Deadline: 12th Febuary 2026
                   </AnimatedGradientText>
                 </div>
               </div>

@@ -49,9 +49,9 @@ export default function About() {
             </Highlight>
             <span> National Level Hackathon</span>
             <Cover className="text-white font-bold">
-               organized by Innovation and Robotics Lab
+               organized by Bharati Vidyapeeth College of Engineering, Navi Mumbai
             </Cover>
-            <span> of Bharati Vidyapeeth College of Engineering, Navi Mumbai - designed for students who want to solve real-world problems using cutting-edge technology. We focus on innovation beyond basic applications — promoting impactful solutions in automation, AI systems, and cyber security.</span>
+            <span>  designed for students who want to solve real-world problems using cutting-edge technology. We focus on innovation beyond basic applications — promoting impactful solutions in automation, AI systems, and cyber security.</span>
           </div>
           
           {/* Quote Block */}
@@ -76,7 +76,7 @@ export default function About() {
                   colorTo="#ea580c"
                   speed={1.5}
                 >
-                  20 February 2026
+                  11 March 2026
                 </AnimatedGradientText>
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function About() {
               <p className="text-lg md:text-xl text-white/80">
                 Registration fee for{" "}
                 <Cover>
-                  <span className="font-bold text-white">Grand Finale</span>
+                  <span className="font-bold text-white">Grand Finale for Shortlisted teams</span>
                 </Cover>
                 {" "}
                 <AnimatedGradientText
@@ -174,7 +174,7 @@ export default function About() {
                   colorTo="#16a34a"
                   speed={1.2}
                 >
-                  ₹400/-
+                  ₹1,000/- 
                 </AnimatedGradientText>
               </p>
             </div>

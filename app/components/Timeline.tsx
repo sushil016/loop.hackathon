@@ -17,58 +17,44 @@ export default function TimelineSection() {
             Registration Opens
           </h3>
           <p className="text-white/80 text-base leading-relaxed">
-            <Highlight className="text-white font-semibold">Register your team</Highlight> on Unstop platform. Form teams of{" "}
+            <Highlight className="text-white font-semibold">Register your team for FREE</Highlight> on Unstop platform. Form teams of{" "}
             <Cover className="text-white font-semibold">3-6 members</Cover> and secure your spot for Loop 1.0
           </p>
         </div>
       ),
     },
     {
-      title: "20 Jan",
+      title: "12 Feb",
       content: (
         <div className="space-y-3">
           <h3 className="text-white text-2xl font-bold mb-2">
-            Submission Round Opens
+            Registration Deadline
           </h3>
           <p className="text-white/80 text-base leading-relaxed">
-            Start submitting your{" "}
-            <Highlight className="text-white font-semibold">PPT presentation</Highlight>,{" "}
-            <Highlight className="text-white font-semibold">prototype</Highlight>, and optional video through{" "}
-            <Cover className="text-white font-semibold">Unstop dashboard</Cover>
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "31 Jan",
-      content: (
-        <div className="space-y-3">
-          <h3 className="text-white text-2xl font-bold mb-2">
-            Registration Closes
-          </h3>
-          <p className="text-white/80 text-base leading-relaxed">
-            Last day to register. Make sure all team members are confirmed and details are accurate on{" "}
+            Last day to register for FREE. Make sure all team members are confirmed and details are accurate on{" "}
             <Cover className="text-white font-semibold">Unstop</Cover>
           </p>
         </div>
       ),
     },
     {
-      title: "4 Feb",
+      title: "20 Feb",
       content: (
         <div className="space-y-3">
           <h3 className="text-white text-2xl font-bold mb-2">
             Submission Deadline
           </h3>
           <p className="text-white/80 text-base leading-relaxed">
-            Final deadline to submit your PPT, prototype, and video. 
+            Final deadline to submit your{" "}
+            <Highlight className="text-white font-semibold">PPT presentation</Highlight>,{" "}
+            <Highlight className="text-white font-semibold">prototype</Highlight>, and optional video. 
             Use the official template and showcase your innovation clearly
           </p>
         </div>
       ),
     },
     {
-      title: "5-9 Feb",
+      title: "21-28 Feb",
       content: (
         <div className="space-y-3">
           <h3 className="text-white text-2xl font-bold mb-2">
@@ -77,13 +63,13 @@ export default function TimelineSection() {
           <p className="text-white/80 text-base leading-relaxed">
             Judges evaluate all submissions based on{" "}
             <Cover className="text-white font-semibold">innovation, technical complexity</Cover>, and clarity. 
-            Top teams will be shortlisted for the final round
+            Top teams will be shortlisted for the final hackathon
           </p>
         </div>
       ),
     },
     {
-      title: "10 Feb",
+      title: "1 March",
       content: (
         <div className="space-y-3">
           <h3 className="text-white text-2xl font-bold mb-2">
@@ -94,14 +80,15 @@ export default function TimelineSection() {
               Shortlisted teams declared!
             </AnimatedShinyText>
             <span className="block mt-2 text-white/70">
-              Selected teams will receive confirmation and further instructions for the finale
+              Selected teams will receive confirmation. Registration fee for Grand Finale:{" "}
+              <Cover className="text-white font-semibold">₹1,000</Cover>
             </span>
           </p>
         </div>
       ),
     },
     {
-      title: "20 Feb",
+      title: "11 March",
       content: (
         <div className="space-y-4">
           <h3 className="text-white text-2xl font-bold mb-2">

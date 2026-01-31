@@ -81,7 +81,7 @@ export default function Hero() {
               alt="LOOP"
               width={600}
               height={200}
-              className="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto cursor-hover"
+              className="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto"
               priority
             />
           </Lens>

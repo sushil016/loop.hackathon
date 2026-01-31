@@ -435,20 +435,8 @@ body {
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    cursor: none !important;
   }
   body {
     @apply bg-background text-foreground;
-    cursor: none !important;
-  }
-  
-  /* Ensure custom cursor shows on interactive elements */
-  a, button, input, textarea, select {
-    cursor: none !important;
-  }
-  
-  /* Add cursor-hover class for elements that should trigger hover state */
-  .cursor-hover {
-    cursor: none !important;
   }
 }
