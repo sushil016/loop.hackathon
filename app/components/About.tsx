@@ -135,7 +135,7 @@ export default function About() {
 
           {/* Download Resources Section */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <a href="/Loop_Brochure.pdf" download>
+            <a href="/Loop-brochure.pdf" download>
               <RippleButton className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">
                 <Download className="w-5 h-5" />
                 Official Brochure
