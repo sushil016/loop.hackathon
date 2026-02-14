@@ -1,25 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { problemTracks } from "@/app/problem-statements/data";
 
 const UNSTOP_LINK =
   "https://unstop.com/p/loop-10-24-hr-national-level-hackathon-bharati-vidyapeeth-college-of-engineering-bvcoe-navi-mumbai-1617554";
 
 export default function ProblemStatements() {
-  const [expandedTracks, setExpandedTracks] = useState<{
-    [key: number]: boolean;
-  }>({ 1: true });
-
-  const toggleTrack = (trackId: number) => {
-    setExpandedTracks((prev) => ({
-      ...prev,
-      [trackId]: !prev[trackId],
-    }));
-  };
-
   const totalProblems = problemTracks.reduce(
     (sum, t) => sum + t.problems.length,
     0
@@ -36,7 +24,7 @@ export default function ProblemStatements() {
 
       {/* Sticky Header */}
       <header className="sticky top-12 z-40 border-b border-white/[0.06] backdrop-blur-2xl bg-black/60">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
           <div className="flex items-center justify-between">
             <h1 className="text-lg sm:text-xl font-bold text-white tracking-tight">
               LOOP{" "}
@@ -56,9 +44,9 @@ export default function ProblemStatements() {
         </div>
       </header>
 
-      <main className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <main className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         {/* Hero */}
-        <div className="mb-20 sm:mb-28 text-center">
+        <div className="mb-16 sm:mb-20 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/60 text-xs font-medium tracking-wider uppercase mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
             {problemTracks.length} Tracks &middot; {totalProblems} Problem
@@ -79,94 +67,62 @@ export default function ProblemStatements() {
           </p>
         </div>
 
-        {/* Tracks */}
-        <div className="space-y-6">
-          {problemTracks.map((track) => {
-            const isOpen = expandedTracks[track.id] ?? false;
-
-            return (
-              <section
-                key={track.id}
-                className="rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden"
+        {/* All Problem Statements */}
+        {problemTracks.map((track) => (
+          <div key={track.id} className="mb-16 last:mb-0">
+            {/* Track Label */}
+            <div className="flex items-center gap-4 mb-6">
+              <div
+                className={`flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br ${track.color} flex items-center justify-center`}
               >
-                {/* Track Header */}
-                <button
-                  onClick={() => toggleTrack(track.id)}
-                  className="w-full text-left p-6 sm:p-8 flex items-start gap-5 hover:bg-white/[0.02] transition-colors cursor-pointer group"
-                >
-                  <div
-                    className={`flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${track.color} flex items-center justify-center shadow-lg`}
-                  >
-                    <span className="text-2xl sm:text-3xl font-black text-white">
-                      {track.id}
-                    </span>
-                  </div>
+                <span className="text-base font-black text-white">
+                  {track.id}
+                </span>
+              </div>
+              <div>
+                <h2 className="text-lg sm:text-xl font-bold text-white leading-tight">
+                  {track.title}
+                </h2>
+                <p className="text-white/35 text-xs sm:text-sm mt-0.5">
+                  {track.subtitle}
+                </p>
+              </div>
+            </div>
 
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
-                      <span className="text-[11px] font-semibold uppercase tracking-widest text-white/40">
-                        Track {track.id}
-                      </span>
-                      <span className="text-white/20">&middot;</span>
-                      <span className="text-[11px] font-medium text-white/40">
-                        {track.problems.length} problems
+            {/* Problem Cards */}
+            <div className="space-y-4">
+              {track.problems.map((problem) => (
+                <article
+                  key={problem.id}
+                  className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.035] hover:border-white/[0.1] transition-all duration-300 p-6 sm:p-8"
+                >
+                  <div className="flex items-start gap-4 sm:gap-5">
+                    {/* Problem Number */}
+                    <div
+                      className={`flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br ${track.color} opacity-70 group-hover:opacity-100 transition-opacity flex items-center justify-center`}
+                    >
+                      <span className="text-xs sm:text-sm font-bold text-white">
+                        {problem.id}
                       </span>
                     </div>
-                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1.5 leading-tight group-hover:text-white/90 transition-colors">
-                      {track.title}
-                    </h2>
-                    <p className="text-white/40 text-sm sm:text-base leading-relaxed">
-                      {track.subtitle}
-                    </p>
-                  </div>
 
-                  <div className="flex-shrink-0 mt-2">
-                    {isOpen ? (
-                      <ChevronUp className="w-5 h-5 text-white/30 group-hover:text-white/60 transition-colors" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-white/30 group-hover:text-white/60 transition-colors" />
-                    )}
-                  </div>
-                </button>
+                    <div className="flex-1 min-w-0">
+                      {/* Problem Title */}
+                      <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 leading-snug group-hover:text-white transition-colors">
+                        {problem.title}
+                      </h3>
 
-                {/* Problems list */}
-                {isOpen && (
-                  <div className="border-t border-white/[0.06]">
-                    {track.problems.map((problem, idx) => (
-                      <div
-                        key={problem.id}
-                        className={`p-6 sm:p-8 ${
-                          idx !== track.problems.length - 1
-                            ? "border-b border-white/[0.04]"
-                            : ""
-                        } hover:bg-white/[0.015] transition-colors`}
-                      >
-                        <div className="flex items-start gap-4 sm:gap-5">
-                          <div
-                            className={`flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${track.color} opacity-80 flex items-center justify-center`}
-                          >
-                            <span className="text-sm sm:text-base font-bold text-white">
-                              {problem.id}
-                            </span>
-                          </div>
-
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 leading-snug">
-                              {problem.title}
-                            </h3>
-                            <p className="text-white/50 text-sm sm:text-[15px] leading-[1.8] sm:leading-[1.85]">
-                              {problem.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                      {/* Problem Description */}
+                      <p className="text-white/45 group-hover:text-white/55 text-sm sm:text-[15px] leading-[1.8] sm:leading-[1.85] transition-colors">
+                        {problem.description}
+                      </p>
+                    </div>
                   </div>
-                )}
-              </section>
-            );
-          })}
-        </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
 
         {/* Guidelines */}
         <section className="mt-20 sm:mt-28">
