@@ -2,7 +2,6 @@ export interface Problem {
   id: number;
   title: string;
   description: string;
-  details?: string;
 }
 
 export interface Track {
@@ -18,150 +17,132 @@ export interface Track {
 export const problemTracks: Track[] = [
   {
     id: 1,
-    title: "Track 1: Build for Failure & Reliability",
-    subtitle: "Systems that detect early warning signs, handle degradation, and prevent catastrophic failure.",
+    title: "Build for Failure & Reliability",
+    subtitle: "Intelligent systems that learn, adapt, or predict with limited, noisy, or incomplete data",
     color: "from-blue-500 to-cyan-500",
     borderColor: "border-blue-500/30",
     hoverGlow: "hover:shadow-blue-500/20",
     problems: [
       {
         id: 1,
-        title: "Healthcare AI Symptom Checker with Confidence Indication",
-        description: "Develop an AI-powered symptom checker that assesses user-reported symptoms and provides preliminary health insights with clear confidence scores.",
-        details: "The system should ask clarifying questions, handle ambiguous inputs, provide a ranked list of possible conditions with confidence levels, suggest when professional consultation is necessary, and maintain patient privacy. It should work with incomplete information and avoid overconfident diagnoses."
+        title: "Healthcare: Symptom Checker & Triage System",
+        description: "Design a clinically reliable, real-time symptom checker and triage system that combines conversational AI, medical imaging analysis, and patient context modeling to make high-stakes care recommendations under uncertainty, with accuracy and safety guarantees comparable to trained clinicians. The system must reason over incomplete, ambiguous, and sometimes misleading patient inputs; analyze user-submitted images (e.g., skin lesions, wounds, swelling) with calibrated confidence; detect red-flag conditions and escalation risks; adapt triage decisions based on patient history, comorbidities, and medication use without full records; operate within strict medical safety constraints; provide transparent explanations and confidence scores for every recommendation; support multilingual and low-health-literacy users; and be robust against hallucinations, bias, and over- or under-triage, while demonstrably reducing unnecessary ER visits without increasing adverse outcomes.",
       },
       {
         id: 2,
-        title: "AI-Powered Live Classroom Captioning for Students with Hearing Impairment",
-        description: "Build a real-time speech-to-text system that transcribes classroom lectures with high accuracy, even in noisy environments.",
-        details: "The solution should handle multiple speakers, background noise, technical jargon, support Indian accents and code-mixing (English + Hindi/regional languages), provide real-time captions with minimal latency, and allow manual corrections by teaching assistants. Optional features include subject-specific vocabulary learning and integration with presentation slides."
+        title: "AI/ML: Real-time Classroom Captioning System",
+        description: "Design and build a real-time classroom and meeting captioning system that operates under adversarial acoustic conditions and strict latency limits, using distributed multi-microphone fusion, unsupervised speaker identification, and context-aware language understanding to produce legally auditable transcriptions within 300 ms end-to-end delay. The system must handle overlapping speakers, code-switching, accents, and technical jargon without prior speaker enrollment, run fully on-device for privacy, and provide word-level timestamps, confidence scores, and speaker attribution, with accuracy and responsiveness exceeding human stenography.",
       },
       {
         id: 3,
-        title: "Agritech Crop Health Monitoring with Early Anomaly Detection",
-        description: "Create an AI-driven system to monitor crop health using drone or satellite imagery and detect early signs of disease, pest infestation, or nutrient deficiency.",
-        details: "The system should analyze multispectral or RGB imagery, detect subtle changes in crop appearance before visible symptoms, generate alerts with recommended interventions, work with low-resolution or partial imagery, and be adaptable to different crops and regions. It should provide confidence scores and avoid false alarms that could waste resources."
+        title: "Agritech: Crop Monitoring & Disease Detection Platform",
+        description: "Build a farmer-centric mobile application that allows farmers to select and register the crops they have planted, such as wheat, rice, or jowar, and continuously monitor and plan crop growth throughout the entire farming season. The system should use AI-driven insights instead of generic farming tips by combining crop growth stages, local soil conditions, weather patterns, and farmer inputs to provide daily and stage-wise recommendations on irrigation, fertilization, pest prevention, and yield improvement. The platform must allow farmers to capture images of their crops using a mobile phone camera and send them to the system for analysis by custom AI/ML models trained to detect crop diseases, pest attacks, nutrient deficiencies, and stress conditions at an early stage. To be practical in real farming environments, the application should work reliably under rural constraints such as poor internet connectivity, low-end smartphones, and limited digital literacy. It should support voice-based interaction for farmers who are not comfortable with typing, allow offline data and photo capture with delayed synchronization when connectivity is available, and deliver region- and crop-specific advice rather than broad, generic suggestions.",
       },
       {
         id: 4,
         title: "Vision-Only Drone Intelligence for Obstacle Avoidance & Real-Time Video Analytics",
-        description: "Create an AI-powered drone intelligence system that operates exclusively on monocular RGB video feeds, without relying on depth sensors or additional hardware.",
-        details: "The system should enable a drone to perceive its environment visually and autonomously avoid obstacles in real time, while simultaneously processing live video streams to detect, track, and count objects of interest. Key challenges include monocular depth estimation from video frames, real-time object detection and tracking, autonomous navigation in dynamic environments, and efficient processing on embedded hardware."
+        description: "Create an AI-powered drone intelligence system that operates exclusively on monocular RGB video feeds, without relying on depth sensors or additional hardware. The system should enable a drone to perceive its environment visually and autonomously avoid obstacles in real time, while simultaneously processing live video streams to detect, track, and count objects of interest.",
       },
       {
         id: 5,
         title: "Intelligent Drone Perception, Tracking & Autonomous Navigation",
-        description: "Build an intelligent drone system capable of real-time video analytics, vision-based target tracking, and autonomous path planning in dynamic environments.",
-        details: "The system should process live drone video feeds to detect, track, and count objects of interest, while simultaneously maintaining a robust visual lock on moving targets, even in the presence of occlusion, motion blur, and rapid motion. In parallel, an autonomous navigation component should be developed where a reinforcement learning-based agent learns to plan optimal flight paths within a simulated environment containing dynamic obstacles."
-      }
-    ]
+        description: "Build an intelligent drone system capable of real-time video analytics, vision-based target tracking, and autonomous path planning in dynamic environments. The system should process live drone video feeds to detect, track, and count objects of interest, while simultaneously maintaining a robust visual lock on moving targets, even in the presence of occlusion, motion blur, and rapid motion. In parallel, an autonomous navigation component should be developed where a reinforcement learning-based agent learns to plan optimal flight paths within a simulated environment containing dynamic obstacles. The navigation intelligence should leverage perceptual insights from video analysis to make informed movement decisions.",
+      },
+    ],
   },
   {
     id: 2,
-    title: "Track 2: Human + Machine Decision Systems",
-    subtitle: "Solutions where automation assists humans under uncertainty, without replacing judgment.",
+    title: "Human + Machine Decision Systems",
+    subtitle: "Solutions where automation assists humans under uncertainty, without replacing judgment",
     color: "from-purple-500 to-pink-500",
     borderColor: "border-purple-500/30",
     hoverGlow: "hover:shadow-purple-500/20",
     problems: [
       {
         id: 1,
-        title: "Healthcare AI-Powered Peer Support Matching for Mental Health Communities",
-        description: "Build a system that intelligently matches individuals in online mental health communities with peers who have similar experiences, backgrounds, or challenges.",
-        details: "The system should analyze user profiles, forum activity, and shared experiences to suggest meaningful connections. It should maintain privacy, handle sensitive topics ethically, avoid harmful matches, provide optional matching filters (age, gender, language, topic), and support both text-based and anonymous interactions. The goal is to foster supportive peer relationships while ensuring user safety."
+        title: "Healthcare: Peer Support Matching Platform",
+        description: "Build a peer support matching platform that uses NLP to connect people experiencing similar mental health challenges based on their journal entries, creating safe spaces for shared experiences and mutual support.",
       },
       {
         id: 2,
-        title: "Education Adaptive AI Learning Agent for Competitive Exam Preparation",
-        description: "Develop an intelligent tutoring system that acts as a personalized AI learning agent for students preparing for competitive exams.",
-        details: "The agent should analyze student performance across practice tests, identify weak topics and question patterns, generate personalized study plans with recommended resources, adapt difficulty and pacing based on progress, simulate exam conditions with mock tests, and provide motivational feedback. It should handle multiple subjects and exam formats (JEE, NEET, UPSC, CAT, etc.)."
+        title: "Education: AI Academic Agent for Universities",
+        description: "Build a mission-critical, closed-loop AI academic agent for universities that replaces ad-hoc search and generic tutoring by acting as a governed learning companion tied directly to institutional curriculum, assessment, and student progression data. The system must reason exclusively over faculty-approved knowledge bases and course artifacts, dynamically track each student\u2019s conceptual mastery, misconceptions, and accessibility needs, and adapt explanations, examples, and pacing in real time through multimodal interaction (speech-first, text, visual summaries). It must support high-stakes use cases\u2014exam preparation, assignment clarification, prerequisite gap detection, and assistive learning for students with disabilities\u2014while enforcing academic integrity, preventing answer leakage, and providing teachers with explainable insight into student understanding, content gaps, and curriculum effectiveness.",
       },
       {
         id: 3,
-        title: "Education AI-Driven Competitive Exam System with Proctoring & Analytics",
-        description: "Create an AI-powered online examination platform designed for conducting competitive exams with intelligent proctoring and post-exam analytics.",
-        details: "The system should include automated proctoring using webcam monitoring for suspicious behavior detection, browser lockdown to prevent tab switching or external resources, question randomization and adaptive difficulty, real-time alerts for exam administrators, and detailed post-exam analytics including performance distribution, question-level insights, and potential anomaly detection. It should balance security with user experience and privacy."
+        title: "AI/ML: Comprehensive Examination AI System",
+        description: "Manual exam paper setting takes 200+ hours per subject with inconsistent difficulty levels. Paper leaks and cheating rampant with 30% exams compromised annually. Evaluation takes 45-60 days with 15% scoring errors causing revaluation requests. Develop comprehensive examination AI that auto-generates question papers using NLP ensuring curriculum coverage, difficulty distribution, and bloom\u2019s taxonomy levels, creates infinite question variations making paper leaks irrelevant while maintaining equivalent difficulty, implements adaptive testing adjusting question difficulty based on student responses measuring true competency levels, provides AI proctoring using facial recognition, gaze tracking, audio monitoring, and browser lockdown detecting 20+ cheating behaviors, enables automated evaluation of subjective answers using NLU comparing against rubrics and awarding partial credits, offers accessibility features including text-to-speech, speech-to-text, extended time, and adjustable interfaces for disabled students. Include teacher dashboard for question bank management with proctoring detecting 95% of cheating attempts with <2% false positives for 1M concurrent test-takers.",
       },
       {
         id: 4,
-        title: "Agritech AI Agent for Government Scheme Discovery & Application Assistance",
-        description: "Build an intelligent agent that helps farmers and rural communities discover relevant government schemes, subsidies, and welfare programs based on their profile and needs.",
-        details: "The agent should understand natural language queries in regional languages, analyze farmer profiles (crop type, land size, income, location) to recommend applicable schemes, guide users through application processes with step-by-step assistance, track application status, send reminders for deadlines, and provide information on required documents. It should work with low-bandwidth scenarios and support voice-based interactions."
+        title: "Agritech: AI-Powered Government Scheme Discovery Platform",
+        description: "India has 700+ government schemes for farmers and rural communities, yet 60% of eligible farmers are unaware of schemes they qualify for. Only 30% of aware farmers actually apply due to complex eligibility criteria, documentation requirements, and language barriers. Build an AI-powered, multilingual platform that helps farmers discover relevant schemes, understand eligibility, submit applications, and track status through an intelligent conversational interface. The system must analyze profiles (land type, acreage, crops, family structure, income, location) to recommend schemes with highest potential benefit while handling complex conditional eligibility rules and scheme quotas. Build an AI assistant supporting 15+ Indian languages with voice input/output for low-literacy users that understands agricultural terminology and guides users through complex forms. Implement OCR-based document verification, cross-validate inputs against government databases, and auto-generate missing paperwork. Must work offline and sync when online, support 10M+ concurrent users with >95% scheme recommendation accuracy, AI responses under 3 seconds, WCAG 2.1 AA compliant with voice navigation. Provide explainable AI showing why users are eligible/ineligible.",
       },
       {
         id: 5,
         title: "AI-Driven Project Intelligence for Engineering Teams",
-        description: "Build an intelligent project management system that continuously analyzes tasks and team communication to generate real-time insights, summaries, and alerts.",
-        details: "The system should integrate with tools like Jira, Slack, GitHub, and email to monitor project progress, detect blockers and delays, summarize daily/weekly progress, identify overloaded team members, suggest task prioritization, and predict project timeline risks. It should provide actionable insights without overwhelming teams with notifications, and learn from past projects to improve recommendations."
+        description: "Build an intelligent project management system that continuously analyzes tasks and team communication to generate real-time insights, summaries, and alerts\u2014reducing manual reporting and coordination overhead. The system should feel proactive and \u201calways aware,\u201d not just a passive task tracker.",
       },
       {
         id: 6,
         title: "AI-Powered Competitive Exam Performance Analytics Platform",
-        description: "Build an intelligent analytics platform that transforms raw competitive exam and mock-test data into personalized, question-level insights and adaptive study recommendations.",
-        details: "The platform should analyze student performance across multiple mock tests, identify weak topics and question types, track progress over time, compare performance with peers, predict exam readiness scores, generate customized study plans, and provide question-level explanations and resources. It should support multiple exam formats and subjects, and present data through intuitive dashboards and reports."
-      }
-    ]
+        description: "Build an intelligent analytics platform that transforms raw competitive exam and mock-test data into personalized, question-level insights and adaptive study recommendations. The system should continuously learn from new test data and clearly show how preparation guidance improves over time.",
+      },
+    ],
   },
   {
     id: 3,
-    title: "Track 3: Less Data, Better Results & Early Detection",
-    subtitle: "Systems that detect early warning signs, handle degradation, and prevent catastrophic failure.",
+    title: "Early Detection & Failure Prevention",
+    subtitle: "Systems that detect early warning signs, handle degradation, and prevent catastrophic failure",
     color: "from-orange-500 to-red-500",
     borderColor: "border-orange-500/30",
     hoverGlow: "hover:shadow-orange-500/20",
     problems: [
       {
         id: 1,
-        title: "Healthcare AI-Based Early Disease Surveillance System",
-        description: "Develop an AI-powered system to detect early signals of disease outbreaks by analyzing diverse data sources such as hospital records, social media, search trends, and pharmacy sales.",
-        details: "The system should identify unusual patterns that may indicate emerging health threats, provide early warnings to public health authorities, work with incomplete or noisy data, handle regional language variations and local health contexts, generate geospatial visualizations of potential outbreaks, and minimize false positives. It should support decision-making during critical early response windows."
+        title: "Healthcare: Smart Healthcare History & Disease Surveillance System",
+        description: "The Smart Healthcare History & Disease Surveillance System is a digital healthcare platform designed to centralize patient medical records, streamline prescription handling, and enable data-driven disease monitoring for early prevention and control. Every patient is provided with a Smart Health Card (QR code or NFC-based) that acts as a secure digital reference to their medical history. A major strength of this system lies in its admin and analytics module. Health administrators and authorities can access anonymized, aggregated data through a centralized dashboard. The system analyzes patient data on the basis of location, time, and disease type to identify patterns and trends. This enables authorities to determine which areas are experiencing a higher number of cases for specific diseases, helping them take preventive measures before the disease spreads widely. Patient data is encrypted, role-based access is implemented, and individual identities are never exposed in analytical reports.",
       },
       {
         id: 2,
-        title: "Intelligent DevOps Automation & Incident Response System",
-        description: "Build an AI-driven system that monitors application logs, metrics, and infrastructure health to detect anomalies and automate incident response.",
-        details: "The system should analyze real-time logs and performance metrics to identify unusual behavior, predict potential failures before they occur, automatically trigger remediation actions (restart services, scale resources, rollback deployments), generate incident reports with root cause analysis, and learn from past incidents to improve future responses. It should integrate with popular DevOps tools (Kubernetes, Prometheus, Grafana, PagerDuty) and reduce mean time to resolution (MTTR)."
+        title: "Automation: Autonomous DevOps & System Reliability Platform",
+        description: "Production systems face 200+ incidents monthly with 4-hour average resolution time. 60% of outages are predictable from monitoring data but detected only after customer impact. Create autonomous DevOps automation that predicts system failures 30-60 minutes in advance using anomaly detection across logs, metrics, and traces, automatically implements corrective actions including service restarts, traffic rerouting, and resource scaling without human intervention, performs intelligent root cause analysis across distributed systems identifying exact failing components and code commits, auto-optimizes database queries and indexes based on execution patterns, manages cloud resources with AI-driven cost optimization shutting down unused instances and rightsizing workloads, implements chaos engineering continuously testing system resilience, and conducts automated deployment with progressive rollouts and instant rollback on error detection. Include ChatOps integration for human oversight and blockchain-based change audit logs. Predict failures with 85% accuracy and 45-minute lead time, reduce MTTR from 4 hours to 15 minutes, false positive rate under 5%, auto-remediation success rate >80%, handle 10 million events per second.",
       },
       {
         id: 3,
-        title: "AI-Powered Cloud Resource Monitoring & Cost Optimization",
-        description: "Create an intelligent system to monitor cloud resource usage (AWS, Azure, GCP) and provide automated recommendations for cost optimization and performance improvement.",
-        details: "The system should analyze usage patterns across compute, storage, and network resources, identify underutilized or idle resources, suggest rightsizing and reserved instance opportunities, detect cost anomalies and budget overruns, automate resource scheduling (start/stop based on usage patterns), and provide forecasting for future costs. It should generate actionable reports for engineering and finance teams."
+        title: "Automation: Cloud Monitoring & Observability Platform",
+        description: "Build a cloud monitoring and observability platform with an intuitive, attractive web dashboard that allows developers and students to easily add and manage servers, Docker containers, and Kubernetes clusters as needed. The system must provide 24x7 monitoring of uptime, performance, resource usage, crashes, and failures, securely collecting logs, metrics, and traces through a custom SDK using API keys. It should present real-time and historical data through interactive dashboards, graphs, alerts, and service maps, while using AI to analyze logs and incidents, explain problems in simple language, suggest possible root causes and fixes, and generate clear uptime, health, cost-impact, and SLA reports. The platform must support distributed tracing, service dependency visualization, incident timeline replay, offline log capture with later sync, role-based access control, audit history, beginner and advanced views, and scalable ingestion with minimal overhead.",
       },
       {
         id: 4,
-        title: "Structural Health Monitoring with Early Damage Detection",
-        description: "Develop a system to monitor the structural health of bridges, buildings, or infrastructure using sensor data (vibration, strain, temperature) and detect early signs of damage or degradation.",
-        details: "The system should analyze sensor time-series data to identify abnormal vibrations or stress patterns, predict maintenance needs before critical failures, provide confidence scores for detected anomalies, work with missing or noisy sensor data, and generate alerts for inspection teams. Optional features include integration with IoT sensor networks and visualization of structural health on digital twin models."
-      }
-    ]
+        title: "Intelligent Structural Health Monitoring System",
+        description: "Build an intelligent monitoring system that continuously analyzes structural stress/strain data to detect early signs of fatigue and predict failure risks in critical infrastructure like bridges. The system should convert raw sensor signals into clear, actionable health insights and alerts for proactive maintenance.",
+      },
+    ],
   },
   {
     id: 4,
-    title: "Track 4: Trust, Safety & Verification and Cybersecurity",
-    subtitle: "Systems that establish authenticity, detect risk, or ensure long-term trust in digital or physical environments.",
+    title: "Trust, Safety & Verification / CyberSecurity",
+    subtitle: "Systems that establish authenticity, detect risk, or ensure long-term trust in digital or physical environments",
     color: "from-green-500 to-emerald-500",
     borderColor: "border-green-500/30",
     hoverGlow: "hover:shadow-green-500/20",
     problems: [
       {
         id: 1,
-        title: "Blockchain-Based Carbon Credit Marketplace with Trust & Transparency",
-        description: "Build a decentralized marketplace for carbon credits using blockchain technology to ensure transparency, prevent double-counting, and verify carbon offset claims.",
-        details: "The platform should allow organizations to buy, sell, and retire carbon credits with full transaction traceability, integrate with IoT sensors or satellite imagery for real-time verification of carbon sequestration activities (reforestation, renewable energy projects), use smart contracts for automated transactions and compliance, and provide a public ledger for audit and regulatory purposes. It should address challenges of trust and greenwashing in carbon markets."
+        title: "Blockchain: Carbon Credit Trading Platform",
+        description: "Create a blockchain-based platform for transparent carbon credit trading that allows individuals and small businesses to buy, sell, and verify carbon offsets while ensuring the authenticity of environmental projects through satellite data integration.",
       },
       {
         id: 2,
-        title: "Secure Cloud Storage with Automatic Compliance & Data Integrity Verification",
-        description: "Create a cloud storage solution that ensures data integrity, encryption, and automatic compliance with data protection regulations (GDPR, HIPAA, etc.).",
-        details: "The system should provide end-to-end encryption for files at rest and in transit, verify data integrity using cryptographic hashing or blockchain-based audit trails, automatically classify data based on sensitivity and apply appropriate access controls, generate compliance reports for audits, detect and alert on unauthorized access or data breaches, and support versioning and tamper-evident storage. It should be easy to use while maintaining high security standards."
+        title: "Automation: Secure Cloud Storage Platform with Regulatory Compliance",
+        description: "Design and implement a cost-efficient, cloud-based secure storage platform that replaces third-party services by providing end-to-end encrypted data storage compliant with strict European regulatory standards (GDPR, ISO/IEC 27001, and data residency requirements), while maintaining AWS-grade reliability and upload semantics. The system must enforce zero-trust access control, fine-grained user permissions, immutable audit logs, and cryptographic key management with customer-controlled keys. It must support large-file uploads via resumable, chunked transfer with deduplication, integrity verification, versioning, and safe retry mechanisms that prevent data corruption or overwrite on failure. Users must be able to modify, pause, resume, and retry uploads seamlessly, with strong consistency guarantees, encryption at rest and in transit, verifiable compliance reporting, and predictable low-cost storage economics without sacrificing performance, durability, or regulatory auditability.",
       },
       {
         id: 3,
         title: "Intelligent Deepfake Detection and Trust Verification System",
-        description: "Build an AI-based system to detect deepfake content in images, videos, and audio by identifying visual, audio, and temporal inconsistencies and generating a clear authenticity or trust score.",
-        details: "The solution should work on low-quality or compressed media, handle unseen deepfake techniques, provide fast (near real-time) results, minimize false positives on genuine content, and offer basic explainability for its decisions. It should be deployable as a web service, browser extension, or API for media platforms and newsrooms to verify content authenticity."
-      }
-    ]
-  }
+        description: "Build an intelligent deepfake detection and trust verification system that can identify AI-generated or manipulated media content across images, videos, and audio in real-time. The system must analyze digital content for authenticity markers, detecting sophisticated deepfakes, face-swaps, voice cloning, and synthetic media created by advanced generative AI models. It should employ multi-modal analysis combining visual artifacts, audio inconsistencies, temporal anomalies, and metadata forensics to establish content provenance and authenticity. The platform must handle high-resolution media, provide confidence scores and explainable detection results showing specific indicators of manipulation, operate under time constraints for real-time verification (news, social media, legal evidence), and maintain high accuracy even as deepfake generation techniques evolve. The system should support forensic-grade evidence trails, integrate blockchain-based content certification for establishing original authenticity, detect partial manipulations within otherwise genuine content, and provide APIs for integration with social media platforms, news organizations, and legal institutions. It must balance false positive rates to avoid flagging legitimate edited content while maintaining high true positive rates for actual deepfakes, and continuously adapt to emerging deepfake generation methods through adversarial training and model updates.",
+      },
+    ],
+  },
 ];

@@ -98,7 +98,7 @@ const useTimer = (unit: Unit) => {
   }, []);
 
   const handleCountdown = async () => {
-    const end = new Date("2026-02-12T23:59:59");
+    const end = new Date("2026-02-17T23:59:59");
     const now = new Date();
     const distance = +end - +now;
 

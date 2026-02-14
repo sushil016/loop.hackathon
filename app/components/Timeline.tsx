@@ -24,7 +24,7 @@ export default function TimelineSection() {
       ),
     },
     {
-      title: "12 Feb",
+      title: "17 Feb",
       content: (
         <div className="space-y-3">
           <h3 className="text-white text-2xl font-bold mb-2">

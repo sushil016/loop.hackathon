@@ -69,7 +69,7 @@ export default function EventDayTimeline() {
             </h1>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
               Complete schedule for the <Cover className="text-white font-bold">24-hour hackathon</Cover> on{" "}
-              <Highlight className="text-white font-bold">20th February 2026</Highlight>
+              <Highlight className="text-white font-bold">11th March 2026</Highlight>
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function EventDayTimeline() {
                 >
                   DAY 1
                 </AnimatedGradientText>
-                <p className="text-white/60">20th February - Morning to Midnight</p>
+                <p className="text-white/60">11th March - Morning to Midnight</p>
               </div>
 
               <div className="space-y-3">
@@ -126,7 +126,7 @@ export default function EventDayTimeline() {
                 >
                   DAY 2
                 </AnimatedGradientText>
-                <p className="text-white/60">21st February - Midnight to Afternoon</p>
+                <p className="text-white/60">12th March - Midnight to Afternoon</p>
               </div>
 
               <div className="space-y-3">

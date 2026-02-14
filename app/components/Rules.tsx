@@ -94,7 +94,7 @@ export default function Rules() {
                     colorTo="#f97316"
                     speed={1.5}
                   >
-                    Registration Deadline: 12th Febuary 2026
+                    Submission Deadline: 20th February 2026
                   </AnimatedGradientText>
                 </div>
               </div>
