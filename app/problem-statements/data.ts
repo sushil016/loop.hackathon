@@ -145,4 +145,49 @@ export const problemTracks: Track[] = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Miscellaneous Problem Statements",
+    subtitle: "Cross-domain challenges spanning robotics, AI, geospatial analytics, and multilingual intelligence",
+    color: "from-yellow-500 to-amber-500",
+    borderColor: "border-yellow-500/30",
+    hoverGlow: "hover:shadow-yellow-500/20",
+    problems: [
+      {
+        id: 1,
+        title: "Autonomous Intelligence for Dynamic Obstacle Avoidance & Path Planning",
+        description: "Design a real-time autonomous navigation system that enables a robot or virtual agent to safely move through unstructured and dynamic environments using only vision-based perception by using camera or video input. The system must detect obstacles, estimate free space, and select a safe path without relying on GPS, pre-built maps, or external localization systems. Participants should implement lightweight and computationally efficient algorithms suitable for real-time performance on limited hardware. The solution may be tested in simulation. Emphasis will be placed on robustness, path safety, and processing speed.",
+      },
+      {
+        id: 2,
+        title: "Multimodal Conversational AI for Sentiment-Aware Dynamic Response Synthesis",
+        description: "Design and develop a real-time multimodal conversational AI system capable of processing text, audio or video inputs from users. The system should detect user sentiment, tone, and emotional context using lightweight emotion recognition techniques. Based on the detected emotional state, it must dynamically adapt and personalize its responses while maintaining contextual continuity across interactions. The solution should demonstrate real-time processing, effective context retention, and meaningful response adaptation. Emphasis will be placed on accuracy of emotion detection, conversational relevance, and computational efficiency.",
+      },
+      {
+        id: 3,
+        title: "Region Aware Precision Farming & Data Aggregation Platform for Agritech",
+        description: "Design and develop a domain specific AI system that provides accurate, region-aware agricultural recommendations by aggregating and structuring data from multiple sources such as weather reports, soil data, crop calendars, and government advisories across India. The system should support localized, natural language queries from farmers and generate actionable insights tailored to specific districts or states. It must integrate diverse datasets into a unified knowledge framework and ensure timely, relevant outputs. Emphasis will be placed on localization accuracy, practical usefulness of recommendations, and system efficiency.",
+      },
+      {
+        id: 4,
+        title: "Vision Based Traffic Intelligence for Autonomous Detection of Unsafe Driving Behaviors",
+        description: "Design and develop a computer vision system that analyzes traffic camera footage to automatically detect unsafe driving behaviors such as sudden braking, wrong way driving, over speeding or pedestrian violations. The system should process live or recorded video, identify vehicles and pedestrians and flag abnormal or rule-violating actions in real time. It must generate clear alerts and actionable insights, such as violation summaries or risk hotspots. The solution should emphasize detection accuracy, low-latency processing, and robustness to varying lighting and traffic conditions. Evaluation will consider reliability, insight quality, and computational efficiency.",
+      },
+      {
+        id: 5,
+        title: "AI Powered Documentation Assistant for Robotics and IoT Knowledge Retrieval",
+        description: "Design and develop an AI assistant that answers user queries by retrieving and grounding information from robotics and IoT documentation sources. The system should extract relevant technical content, generate clear and accurate explanations, and cite the source sections used in its response. It must handle domain specific terminology, code snippets, and configuration details effectively. The solution may operate on provided documentation datasets and should demonstrate reliable retrieval and context-aware reasoning. Emphasis will be placed on answer accuracy, proper source grounding, and clarity of technical explanations.",
+      },
+      {
+        id: 6,
+        title: "End to End Automated Pipeline for Drone Data Photogrammetry and Geospatial Analytics",
+        description: "Design and develop an end to end software pipeline for uploading, processing, and analyzing drone flight data, including captured images and associated metadata. The system should extract EXIF and GPS information, perform geotagging, and organize images based on spatial and temporal attributes. It must support basic photogrammetry workflows such as image stitching, 2D orthomosaic generation, or simple 3D reconstruction, and present results through an interactive web based visualization interface. The solution may use simulated or real drone datasets. Emphasis will be placed on data processing accuracy, mapping quality, visualization clarity, and overall system integration.",
+      },
+      {
+        id: 7,
+        title: "Multilingual Conversational Intelligence with Autonomous Language Switching",
+        description: "Design and develop a multilingual conversational robot capable of understanding and responding in at least three languages (e.g. English, Hindi and Marathi). The system should automatically detect the user's spoken or typed language and seamlessly switch conversation modes without manual selection. It must maintain contextual continuity across language transitions and generate coherent, natural responses. The solution may use text or speech interfaces and can be implemented in simulation without requiring physical hardware. Emphasis will be placed on language detection accuracy, response fluency, context retention, and real-time performance.",
+      },
+    ],
+  },
 ];
