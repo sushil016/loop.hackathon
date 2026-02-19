@@ -108,6 +108,20 @@ export default function Hero() {
         </div>
         {/* ---------------------------------- */}
 
+        {/* --- IN ASSOCIATION WITH CDAC SECTION --- */}
+        <div className="flex flex-col items-center justify-center mt-8 gap-3 z-20 relative animate-fade-in-up delay-200">
+          <p className={`${orbitron.className} text-white/90 text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-center px-4`}>
+            In Association With<br />
+            Centre for Development of Advanced Computing<br />
+            (CDAC)
+          </p>
+          
+          <p className={`${orbitron.className} text-white/80 text-xs md:text-sm font-semibold tracking-[0.15em] uppercase`}>
+            ✨ Internships will be provided by CDAC
+          </p>
+        </div>
+        {/* ---------------------------------- */}
+
         {/* Timer Section */}
         {/* <div className="w-full flex justify-center animate-fade-in-up delay-200">
            <CountdownTimer />
