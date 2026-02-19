@@ -10,6 +10,7 @@ import { ShineBorder } from "@/components/ui/shine-border";
 import { ConfettiButton } from "@/components/ui/confetti";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { Download } from "lucide-react";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -135,19 +136,12 @@ export default function About() {
 
           {/* Download Resources Section */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <a href="/Loop-brochure.pdf" download>
+            <Link href="/downloads">
               <RippleButton className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">
                 <Download className="w-5 h-5" />
-                Official Brochure
+                Downloads &amp; Resources
               </RippleButton>
-            </a>
-
-            <a href="/Loop-PPT.pdf" download>
-              <RippleButton className="inline-flex items-center justify-center gap-3 border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg bg-white/5">
-                <Download className="w-5 h-5" />
-                Download PPT Template
-              </RippleButton>
-            </a>
+            </Link>
           </div>
 
           {/* Registration Fee Info */}

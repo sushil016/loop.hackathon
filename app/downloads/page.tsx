@@ -74,7 +74,7 @@ export default function DownloadsPage() {
                 </p>
                 
                 <a
-                  href="/Loop_Brochure.pdf"
+                  href="/Loop Brochure-official.pdf"
                   download
                   className="group/btn inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/50 w-full"
                 >
@@ -107,6 +107,31 @@ export default function DownloadsPage() {
                 >
                   <Download className="w-5 h-5 group-hover/btn:animate-bounce" />
                   Download PDF
+                </a>
+              </div>
+            </div>
+            <div className="group relative bg-gradient-to-br from-white/[0.08] to-white/[0.03] border border-white/10 hover:border-purple-500/50 rounded-2xl p-10 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <div className="relative z-10">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-white/10">
+                  <Presentation className="w-10 h-10 text-purple-400" />
+                </div>
+                
+                <h2 className="text-2xl font-bold text-white mb-3">
+                  PPT Template
+                </h2>
+                <p className="text-white/60 mb-8 leading-relaxed">
+                  Official presentation template for your project
+                </p>
+                
+                <a
+                  href="/Loop PPT Template.pptx"
+                  download
+                  className="group/btn inline-flex items-center justify-center gap-3 border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 w-full"
+                >
+                  <Download className="w-5 h-5 group-hover/btn:animate-bounce" />
+                  Download PPTX
                 </a>
               </div>
             </div>
