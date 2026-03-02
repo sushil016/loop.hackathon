@@ -8,10 +8,12 @@ import Rules from "./components/Rules";
 import Sponsors from "./components/Sponsors";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import ResultAnnouncementPopup from "./components/ResultAnnouncementPopup";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <ResultAnnouncementPopup />
       <Navbar />
       <main>
         <Hero />

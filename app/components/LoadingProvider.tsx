@@ -17,8 +17,8 @@ export default function LoadingProvider({
   const [isFading, setIsFading] = useState(false);
   const pathname = usePathname();
   
-  // Don't show loading animation on problem-statements page
-  const shouldShowLoading = pathname !== "/problem-statements";
+  // Don't show loading animation on certain pages
+  const shouldShowLoading = pathname !== "/problem-statements" && pathname !== "/result-loop-1.0";
 
   useEffect(() => {
     // Skip loading animation for problem-statements page
