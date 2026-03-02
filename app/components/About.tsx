@@ -9,8 +9,9 @@ import { HyperText } from "@/components/ui/hyper-text";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { ConfettiButton } from "@/components/ui/confetti";
 import { RippleButton } from "@/components/ui/ripple-button";
-import { Download } from "lucide-react";
+import { Download, Briefcase, Gift } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -52,7 +53,11 @@ export default function About() {
             <Cover className="text-white font-bold">
                organized by Bharati Vidyapeeth College of Engineering, Navi Mumbai
             </Cover>
-            <span>  designed for students who want to solve real-world problems using cutting-edge technology. We focus on innovation beyond basic applications — promoting impactful solutions in automation, AI systems, and cyber security.</span>
+            <span> in association with </span>
+            <Highlight className="text-white font-bold">
+              Centre for Development of Advanced Computing (C-DAC)
+            </Highlight>
+            <span> (Ministry of Electronics &amp; Information Technology, Government of India), designed for students who want to solve real-world problems using cutting-edge technology. We focus on innovation beyond basic applications — promoting impactful solutions in automation, AI systems, and cyber security.</span>
           </div>
           
           {/* Quote Block */}
@@ -171,6 +176,59 @@ export default function About() {
                   ₹1,000/- 
                 </AnimatedGradientText>
               </p>
+            </div>
+          </div>
+
+          {/* C-DAC & Unstop Highlights */}
+          <div className="grid md:grid-cols-2 gap-6 mt-12">
+            {/* C-DAC Internship */}
+            <div className="relative rounded-2xl bg-gradient-to-br from-orange-500/10 to-yellow-500/5 border border-orange-500/15 p-6 sm:p-8 overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl" />
+              <div className="relative z-10 flex items-start gap-4">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                  <Briefcase className="w-6 h-6 text-orange-400" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-white mb-2">Internship &amp; Implementation Support</h4>
+                  <p className="text-white/50 text-sm leading-relaxed">
+                    Provided for selected participants at <span className="text-white/80 font-medium">C-DAC, Navi Mumbai</span> — a gateway to work on cutting-edge government tech initiatives.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Unstop Goodies */}
+            <div className="relative rounded-2xl bg-gradient-to-br from-pink-500/10 to-purple-500/5 border border-pink-500/15 p-6 sm:p-8 overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-pink-500/10 rounded-full blur-3xl" />
+              <div className="relative z-10 flex items-start gap-4">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+                  <Gift className="w-6 h-6 text-pink-400" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-white mb-2">🏆 Exclusive Goodies for Winners</h4>
+                  <p className="text-white/50 text-sm leading-relaxed">
+                    Powered by <span className="text-white/80 font-medium">Unstop</span> — top-performing teams will receive exclusive swag and goodies!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* C-DAC Association Badge */}
+          <div className="mt-12 flex flex-col items-center gap-3">
+            <p className="text-xs text-white/30 uppercase tracking-[0.2em] font-medium">In Association With</p>
+            <div className="inline-flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+              <Image
+                src="/c-dac-logo.jpg"
+                alt="C-DAC Logo"
+                width={56}
+                height={56}
+                className="rounded-lg"
+              />
+              <div>
+                <p className="text-white font-semibold text-base">C-DAC</p>
+                <p className="text-white/40 text-xs">Ministry of Electronics &amp; IT, Govt. of India</p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Trophy, Clock, MapPin, Users, Search } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, Trophy, Clock, MapPin, Users, Search, Briefcase, Gift } from "lucide-react";
 import { useState, useMemo } from "react";
 
 interface Team {
@@ -47,6 +48,13 @@ const shortlistedTeams: Team[] = [
 
 const waitlistedTeams: Team[] = [
   { team_id: "U23W5B5I", team_name: "Team Dreamers", status: "Waitlist", college: "Vishwakarma Institute Of Technology, Pune", team_leader: "Nihar Thalkar" },
+      {
+      team_id: "U2LI5B47",
+      team_name: "React-ive",
+      status: "Waitlist",
+      college: "Shri Vile Parle Kelavani Mandal's Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai",
+      team_leader: "Soham Panwalkar"
+    },
   { team_id: "UC9A33S9", team_name: "Vibe_Coderzz", status: "Waitlist", college: "Dr. Vishwanath Karad MIT World Peace University (MIT-WPU), Pune", team_leader: "Shashwat Holkar" },
   { team_id: "UY8F5G74", team_name: "CodeBreakers", status: "Waitlist", college: "Saraswati College of Engineering", team_leader: "Rutuja Rajesh Patil" },
   { team_id: "UX92Y1C3", team_name: "Tech-Bytes", status: "Waitlist", college: "Dwarkadas J. Sanghvi College of Engineering", team_leader: "Manishkumar Munnalal Gupta" },
@@ -56,6 +64,13 @@ const waitlistedTeams: Team[] = [
   { team_id: "U6VP2O78", team_name: "CodeBlooded", status: "Waitlist", college: "Vidyalankar School Of Information Technology", team_leader: "Pratham Yadav" },
   { team_id: "UO31JF69", team_name: "InnoQueens", status: "Waitlist", college: "Marathwada Mitra Mandal's College of Engineering (MMCOE), Pune", team_leader: "Jidnyasa Devendra Patil" },
   { team_id: "U81DUC12", team_name: "HacXcelerate", status: "Waitlist", college: "Datta Meghe College of Engineering, Airoli, Navi Mumbai", team_leader: "Dhanushkar Guin" },
+      {
+      team_id: "USF068O8",
+      team_name: "Nexora",
+      status: "Waitlist",
+      college: "Bansilal Ramnath Agarwal Charitable Trust's Vishwakarma Institute of Technology",
+      team_leader: "Ved Tangadpalliwar"
+    },
 ];
 
 export default function ResultPage() {
@@ -138,6 +153,24 @@ export default function ResultPage() {
           <p className="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-8">
             Congratulations to all the teams selected for the Loop 1.0 Grand Finale!
           </p>
+
+          {/* C-DAC Association */}
+          <div className="mb-10 flex flex-col items-center gap-4">
+            <p className="text-sm text-white/40 uppercase tracking-widest font-medium">In Association With</p>
+            <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm">
+              <Image
+                src="/c-dac-logo.jpg"
+                alt="C-DAC Logo"
+                width={60}
+                height={60}
+                className="rounded-lg"
+              />
+              <div className="text-left">
+                <p className="text-white font-semibold text-base sm:text-lg">Centre for Development of Advanced Computing (C-DAC)</p>
+                <p className="text-white/40 text-xs sm:text-sm">Ministry of Electronics &amp; Information Technology, Government of India</p>
+              </div>
+            </div>
+          </div>
 
           {/* Event Info */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-white/50">
@@ -342,6 +375,20 @@ export default function ResultPage() {
                 <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-purple-400" />
                 <p>
                   For any queries, reach out to us through our official communication channels.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-orange-400" />
+                <p>
+                  <span className="text-white/80 font-medium">Internship &amp; Implementation Support</span>{" "}
+                  has been provided for selected participants at C-DAC, Navi Mumbai.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-pink-400" />
+                <p>
+                  🏆{" "}
+                  <span className="text-white/80 font-medium">Exclusive Goodies for Winners</span>, powered by Unstop.
                 </p>
               </div>
             </div>

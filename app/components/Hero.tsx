@@ -108,6 +108,28 @@ export default function Hero() {
         </div>
         {/* ---------------------------------- */}
 
+        {/* In Association with C-DAC */}
+        <div className="flex flex-col items-center justify-center mt-4 z-20 relative animate-fade-in-up delay-175">
+          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5">
+            <p className="text-white/60 text-xs sm:text-sm font-medium tracking-wider uppercase">
+              In Association With
+            </p>
+            <Image
+              src="/c-dac-logo.jpg"
+              alt="C-DAC"
+              width={40}
+              height={40}
+              className="rounded-sm"
+            />
+            <p className="text-white/90 text-sm sm:text-base font-semibold">
+              C-DAC
+            </p>
+          </div>
+          <p className="text-white/60 text-[10px] sm:text-xs mt-1.5 tracking-wide">
+            Ministry of Electronics &amp; IT, Govt. of India
+          </p>
+        </div>
+
         {/* Timer Section */}
         {/* <div className="w-full flex justify-center animate-fade-in-up delay-200">
            <CountdownTimer />
